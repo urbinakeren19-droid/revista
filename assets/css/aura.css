@@ -775,3 +775,40 @@ sup.ref a:hover { text-decoration: underline; }
 .prod-spec .spec-table tbody td { color: var(--paper-soft); }
 .prod-spec .spec-table th,
 .prod-spec .spec-table td { border-bottom-color: var(--void-3); }
+
+/* --------------------------------------------------------------------------
+   Puntos de venta — rejilla de 6 elementos
+   `auto-fit` repartía 5 + 1 y dejaba una tarjeta huérfana. Con columnas
+   fijas por punto de quiebre siempre quedan filas completas: 3+3, 2+2+2, 1×6.
+   -------------------------------------------------------------------------- */
+.pos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s4);
+  align-items: stretch;
+}
+
+.pos {
+  border: 1px solid var(--void-3);
+  border-radius: var(--radius);
+  padding: var(--s5);
+  background: var(--void);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  transition: border-color .25s var(--ease);
+}
+.pos:hover { border-color: var(--garnet); }
+
+.pos__n    { font-family: var(--mono); font-size: .8125rem; color: var(--halo); }
+.pos__zona { font-family: var(--display); font-size: 1.25rem; line-height: 1.15; }
+.pos__tipo { font-size: .875rem; color: var(--paper-soft); margin: 0; }
+.pos__sec  {
+  font-family: var(--mono); font-size: .8125rem;
+  margin: auto 0 0; padding-top: var(--s3);
+  border-top: 1px solid var(--void-3);
+  color: rgba(230, 232, 221, .58);
+}
+
+@media (max-width: 900px) { .pos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .pos-grid { grid-template-columns: 1fr; } }
