@@ -13,13 +13,13 @@ GitHub Pages, Netlify o cualquier hosting.
 
 | Elemento pedido | Dónde está |
 |---|---|
-| **El artículo de lanzamiento** | `articulos/lanzamiento-aura-honduras.html` — pieza principal, destacada en la portada |
+| **El artículo de lanzamiento** | `articulos/lanzamiento-aura-san-pedro-sula.html` — pieza principal, destacada en la portada |
 | **Marca eco-amigable** | Aura: toalla sanitaria de fibra vegetal. Composición completa publicada en `index.html#composicion` |
-| **Estrategia de distribución exclusiva** | Desarrollada en el artículo: comparación de los tres modelos de intensidad, cuatro razones de la elección, criterios de selección de puntos y contraprestación al aliado |
+| **Estrategia de distribución exclusiva** | Desarrollada en el artículo: comparación de los tres modelos de intensidad, selección de plaza de entrada, cuatro razones de la elección, cinco criterios de selección de puntos y contraprestación al aliado |
 | **Publicación en blog / web** | Sitio completo de 11 páginas con 6 artículos y 49 referencias |
 
 **El artículo de lanzamiento es la entrega.** Todo lo demás existe para
-sostenerlo: el blog le da contexto, la ficha de producto lista los catorce
+sostenerlo: el blog le da contexto, la ficha de producto lista los seis
 puntos y `marca.html` documenta el razonamiento estratégico.
 
 ### Conceptos de mercadeo que quedan demostrados
@@ -27,6 +27,16 @@ puntos y `marca.html` documenta el razonamiento estratégico.
 - **Intensidad de distribución.** Intensiva, selectiva y exclusiva comparadas
   y graficadas (`assets/img/fig-distribucion.svg`). Se justifica por qué una
   categoría que normalmente es intensiva opera aquí en el extremo opuesto.
+- **Selección de plaza de entrada.** Por qué San Pedro Sula y no lanzamiento
+  nacional: densidad del segmento, tejido de comercio independiente y
+  logística de un solo radio. Incluye el argumento de medición — con seis
+  puntos en un mismo mercado, las diferencias de rotación se explican por
+  ejecución y no por variables regionales.
+- **Expansión por fases con condición de entrada medible.** Ampliar dentro de
+  San Pedro Sula, después Tegucigalpa, y solo al final la transición a
+  distribución selectiva. Cada fase se activa por métrica, no por fecha.
+- **No solape territorial.** Las seis zonas no se cruzan: dos aliados
+  compitiendo por el mismo radio anularían el sentido de la exclusividad.
 - **Exclusividad recíproca.** El aliado no vende competencia directa; la marca
   no vende a otro minorista en su radio. Con la contraprestación explícita:
   margen superior, capacitación pagada y protección territorial.
@@ -70,7 +80,7 @@ aura/
 ├── marca.html                      Estrategia de marca completa
 ├── 404.html
 ├── articulos/
-│   ├── lanzamiento-aura-honduras.html        <- LA ENTREGA
+│   ├── lanzamiento-aura-san-pedro-sula.html   <- LA ENTREGA
 │   ├── greenwashing-marketing-verde.html
 │   ├── plastico-en-toallas-sanitarias.html
 │   ├── quimicos-en-productos-menstruales.html
@@ -84,7 +94,7 @@ aura/
 └── build_*.py                      Generadores de páginas (opcionales)
 ```
 
-Peso total: unos 368 KB. Sin frameworks, sin `node_modules`, sin compilación.
+Peso total: unos 370 KB. Sin frameworks, sin `node_modules`, sin compilación.
 
 ---
 
@@ -97,7 +107,7 @@ que digas en la defensa.
 | Dato | Valor actual | Nota |
 |---|---|---|
 | Fecha de lanzamiento | 1 de septiembre | Ajustala a tu calendario |
-| Puntos de venta | 14, en 4 ciudades | Los nombres son genéricos («Farmacia — Barrio X») a propósito, para no atribuir nada a negocios reales |
+| Puntos de venta | 6, todos en San Pedro Sula | Se nombran por zona y tipo de comercio, no por razón social, para no atribuir nada a negocios reales |
 | Precios | L 65 / L 72 / L 58 | Coherentes con un posicionamiento superior |
 | Porcentajes de composición | Suman 100 % | Si los cambiás, verificá que sigan sumando 100 |
 | Correo | `hola@aura.hn` | Dominio ficticio |

@@ -9,9 +9,9 @@ from build_pages import render
 # ==========================================================================
 
 POSTS = [
-    ("LANZAMIENTO", "Aura llega a Honduras, y solo a catorce lugares",
+    ("LANZAMIENTO", "Aura llega a San Pedro Sula, y solo a seis lugares",
      "Una toalla sanitaria de fibra vegetal que sale a la venta el 1 de septiembre sin pasar por el supermercado. La decisión de canal es deliberada, y explicarla es parte del producto.",
-     "articulos/lanzamiento-aura-honduras.html", "9 MIN · 6 REFERENCIAS"),
+     "articulos/lanzamiento-aura-san-pedro-sula.html", "10 MIN · 6 REFERENCIAS"),
     ("MERCADEO", "Greenwashing: el 53 % de las promesas verdes no resiste una revisión",
      "La Comisión Europea auditó las afirmaciones ambientales del mercado y encontró que más de la mitad eran vagas o infundadas. Qué significa eso para una marca que sí invirtió en cambiar su producto.",
      "articulos/greenwashing-marketing-verde.html", "9 MIN · 8 REFERENCIAS"),
@@ -142,26 +142,21 @@ for i, (name, img, tag, price, unit, rows) in enumerate(SPECS):
     </div>""")
 
 PUNTOS = [
-    ("San Pedro Sula", 5, ["Farmacia — Barrio Río de Piedras", "Farmacia — Col. Trejo",
-                           "Tienda naturista — Av. Circunvalación", "Farmacia — Barrio Guamilito",
-                           "Tienda naturista — Col. Jardines del Valle"]),
-    ("Tegucigalpa", 5, ["Farmacia — Col. Palmira", "Tienda naturista — Col. Lomas del Guijarro",
-                        "Farmacia — Barrio La Granja", "Farmacia — Col. Kennedy",
-                        "Tienda naturista — Col. Miraflores"]),
-    ("Puerto Cortés", 2, ["Farmacia — Barrio El Centro", "Tienda naturista — Barrio Medina"]),
-    ("La Ceiba", 2, ["Farmacia — Barrio El Iman", "Tienda naturista — Zona Viva"]),
+    ("Barrio Río de Piedras", "Farmacia", "Zona norte"),
+    ("Avenida Circunvalación", "Tienda naturista", "Zona Viva"),
+    ("Colonia Trejo", "Farmacia", "Zona sureste"),
+    ("Colonia Jardines del Valle", "Tienda naturista", "Zona suroeste"),
+    ("Barrio Guamilito", "Farmacia", "Centro"),
+    ("Colonia Universidad", "Tienda naturista", "Zona este"),
 ]
 
 pts = "\n".join(f"""
-        <div style="border:1px solid var(--void-3);border-radius:var(--radius);padding:var(--s5);background:var(--void)">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);padding-bottom:var(--s3);margin-bottom:var(--s4);border-bottom:1px solid var(--void-3)">
-            <h3 style="font-family:var(--display);font-size:1.25rem">{c}</h3>
-            <span class="data" style="color:var(--halo);flex:none">{n} PUNTOS</span>
-          </div>
-          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s3)">
-            {"".join(f'<li style="font-size:.875rem;color:var(--paper-soft)">{p}</li>' for p in lst)}
-          </ul>
-        </div>""" for c, n, lst in PUNTOS)
+        <div class="pos">
+          <span class="pos__n">{i:02d}</span>
+          <h3 class="pos__zona">{zona}</h3>
+          <p class="pos__tipo">{tipo}</p>
+          <p class="pos__sec">{sector}</p>
+        </div>""" for i, (zona, tipo, sector) in enumerate(PUNTOS, 1))
 
 PROD = f"""
   <section class="band band--tight">
@@ -180,17 +175,17 @@ PROD = f"""
     <div class="wrap">
       <div style="max-width:660px;margin-bottom:var(--s7)">
         <p class="eyebrow">Distribución exclusiva</p>
-        <h2 class="display-l" style="margin-bottom:var(--s4)">Catorce puntos.<br>Ni uno más, por ahora.</h2>
-        <p class="lede">Aura no se vende en supermercados. Cada punto de esta lista firmó un acuerdo de exclusividad recíproca, recibió capacitación sobre la composición del producto y sostiene el mismo precio publicado. Si un local no aparece acá, no es un punto autorizado.</p>
-        <p style="margin-top:var(--s5)"><a class="btn btn--ghost" href="articulos/lanzamiento-aura-honduras.html">Por qué elegimos este canal</a></p>
+        <h2 class="display-l" style="margin-bottom:var(--s4)">Seis puntos,<br>todos en San Pedro Sula.</h2>
+        <p class="lede">Aura no se vende en supermercados. Cada punto de esta lista firmó un acuerdo de exclusividad recíproca, recibió capacitación sobre la composición del producto y sostiene el mismo precio publicado. Las seis zonas no se solapan: dos aliados compitiendo por el mismo radio anularían el sentido del acuerdo. Si un local no aparece acá, no es un punto autorizado.</p>
+        <p style="margin-top:var(--s5)"><a class="btn btn--ghost" href="articulos/lanzamiento-aura-san-pedro-sula.html">Por qué elegimos este canal</a></p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--s5);align-items:start">
+      <div class="pos-grid">
 {pts}
       </div>
 
       <p style="margin-top:var(--s6);font-family:var(--mono);font-size:.75rem;color:var(--paper-soft);max-width:64ch">
-        Las direcciones completas se publican el 1 de septiembre. La lista se actualiza cada vez que cambia, con la fecha del último cambio al pie.
+        Las direcciones exactas se publican el 1 de septiembre. La lista se actualiza cada vez que cambia, con la fecha del último cambio al pie. La ampliación dentro de San Pedro Sula se habilita cuando estos seis puntos sostengan seis meses sin quiebres de inventario.
       </p>
     </div>
   </section>
@@ -204,7 +199,7 @@ PROD = f"""
         <details open>
           <summary>¿Por qué no está en el supermercado?</summary>
           <p>Porque el argumento del producto es una tabla de composición con siete componentes, y eso no se comunica en el segundo y medio que dura una decisión frente a la góndola. La distribución exclusiva permite que quien vende el producto sepa qué está vendiendo.</p>
-          <p>También protege el precio: el acuerdo fija una política única en los catorce puntos, así que cuesta lo mismo en Puerto Cortés que en Tegucigalpa.</p>
+          <p>También protege el precio: el acuerdo fija una política única en los seis puntos, así que cuesta lo mismo en Guamilito que en Jardines del Valle.</p>
         </details>
         <details>
           <summary>¿Absorbe igual que una toalla con gel?</summary>
@@ -232,7 +227,7 @@ PROD = f"""
 """
 
 render("producto.html", "Producto — Aura",
-       "Fichas técnicas de Aura Día, Noche y Diario, y los catorce puntos de venta exclusivos donde se consigue la marca en Honduras.",
+       "Fichas técnicas de Aura Día, Noche y Diario, y los seis puntos de venta exclusivos donde se consigue la marca en San Pedro Sula.",
        PROD, depth=0, active="prod")
 
 # ==========================================================================
@@ -243,7 +238,7 @@ VOZ = [
     ("«Composición completa publicada: 7 componentes, % en peso»", "«100 % natural»"),
     ("«En proceso de certificación EN 13432»", "«Certificado ecológico»"),
     ("«Los estudios detectaron ftalatos; el daño no está establecido»", "«Libre de tóxicos»"),
-    ("«Catorce puntos de venta»", "«Disponible en puntos seleccionados»"),
+    ("«Seis puntos de venta en San Pedro Sula»", "«Disponible en puntos seleccionados»"),
     ("«Cuesta más porque la fibra cuesta más»", "«Invertí en vos misma»"),
 ]
 
@@ -257,7 +252,7 @@ voz_rows = "\n".join(
 MIX = [
     ("Producto", "Toalla de fibra vegetal en tres formatos. El atributo diferencial no es el desempeño, es la trazabilidad de materiales."),
     ("Precio", "Superior a la categoría, sostenido por costo real de insumo. Precio único publicado, sin descuentos por punto."),
-    ("Plaza", "Distribución exclusiva. Catorce puntos, exclusividad recíproca, capacitación obligatoria del punto de venta."),
+    ("Plaza", "Distribución exclusiva en San Pedro Sula. Seis puntos sin solape territorial, exclusividad recíproca y capacitación obligatoria del punto de venta."),
     ("Promoción", "Mercadeo de contenidos. El blog es el canal principal: seis artículos con 49 referencias verificables, en lugar de pauta de alcance."),
 ]
 
@@ -273,7 +268,7 @@ MARCA = f"""
     <div class="wrap" style="max-width:780px">
       <p class="eyebrow">Estrategia de marca</p>
       <h1 class="display-xl" style="margin-bottom:var(--s5)">Las decisiones<br>detrás del sitio.</h1>
-      <p class="lede">Esta página documenta el razonamiento de mercadeo que sostiene todo lo demás: a quién le hablamos, qué posición ocupamos, por qué elegimos un canal exclusivo y qué reglas de lenguaje seguimos. Está publicada a propósito, porque una marca cuyo argumento es la transparencia no puede esconder su propia estrategia.</p>
+      <p class="lede">Esta página documenta el razonamiento de mercadeo detrás del lanzamiento en San Pedro Sula: a quién le hablamos, qué posición ocupamos, por qué elegimos un canal exclusivo y qué reglas de lenguaje seguimos. Está publicada a propósito, porque una marca cuyo argumento es la transparencia no puede esconder su propia estrategia.</p>
     </div>
   </section>
 
@@ -282,7 +277,7 @@ MARCA = f"""
       <p class="eyebrow">Posicionamiento</p>
       <h2 class="display-l" style="margin-bottom:var(--s5)">Un enunciado, cuatro consecuencias.</h2>
       <div class="pull" style="margin-top:0">
-        Para mujeres de zonas urbanas de Honduras que ya cuestionan lo que consumen, Aura es la toalla sanitaria que publica su composición completa, porque en una categoría donde la mitad de las etiquetas verdes no verifica nada, el dato contrastable es la única diferencia que la competencia no puede copiar sin pagar el mismo costo.
+        Para mujeres de San Pedro Sula que ya cuestionan lo que consumen, Aura es la toalla sanitaria que publica su composición completa, porque en una categoría donde la mitad de las etiquetas verdes no verifica nada, el dato contrastable es la única diferencia que la competencia no puede copiar sin pagar el mismo costo.
       </div>
       <p style="margin-top:var(--s6)">El enunciado obliga a cuatro cosas, y cada una tiene una consecuencia operativa visible en el sitio:</p>
       <ol style="font-family:var(--read);font-size:1.0625rem;line-height:1.7;padding-left:1.3em">
@@ -305,7 +300,7 @@ MARCA = f"""
         <div style="border:1px solid var(--void-3);border-radius:var(--radius-lg);padding:var(--s6);background:var(--void-2)">
           <span class="data" style="color:var(--halo)">SEGMENTO PRIMARIO</span>
           <h3 style="font-family:var(--display);font-size:1.5rem;margin:var(--s3) 0 var(--s4)">La que ya lee etiquetas</h3>
-          <p style="font-size:.9375rem;color:var(--paper-soft)">Mujer de 24 a 38 años, urbana, con ingreso propio. Ya cambió otros productos de su rutina por versiones sin fragancia o sin ciertos ingredientes. Desconfía de la palabra «natural» porque la vio usada en demasiadas cosas.</p>
+          <p style="font-size:.9375rem;color:var(--paper-soft)">Mujer de 24 a 38 años, residente en San Pedro Sula, con ingreso propio. Ya cambió otros productos de su rutina por versiones sin fragancia o sin ciertos ingredientes. Desconfía de la palabra «natural» porque la vio usada en demasiadas cosas.</p>
           <p style="font-size:.9375rem;color:var(--paper-soft);margin:0"><strong style="color:var(--pulp)">Qué la mueve:</strong> poder verificar. No busca que le prometan, busca poder comprobar.</p>
         </div>
 
@@ -319,7 +314,7 @@ MARCA = f"""
         <div style="border:1px solid var(--void-3);border-radius:var(--radius-lg);padding:var(--s6);background:var(--void-2)">
           <span class="data" style="color:var(--halo)">INFLUENCIA</span>
           <h3 style="font-family:var(--display);font-size:1.5rem;margin:var(--s3) 0 var(--s4)">El punto de venta</h3>
-          <p style="font-size:.9375rem;color:var(--paper-soft)">En farmacias y tiendas naturistas de Honduras, la recomendación de mostrador pesa más que cualquier empaque. En distribución exclusiva ese actor deja de ser un intermediario y pasa a ser parte del mensaje.</p>
+          <p style="font-size:.9375rem;color:var(--paper-soft)">En las farmacias de barrio y tiendas naturistas de San Pedro Sula, la recomendación de mostrador pesa más que cualquier empaque. En distribución exclusiva ese actor deja de ser un intermediario y pasa a ser parte del mensaje.</p>
           <p style="font-size:.9375rem;color:var(--paper-soft);margin:0"><strong style="color:var(--pulp)">Qué lo mueve:</strong> margen superior, protección territorial y saber explicar el producto sin equivocarse.</p>
         </div>
       </div>
@@ -330,11 +325,11 @@ MARCA = f"""
     <div class="wrap" style="max-width:900px">
       <p class="eyebrow">Estrategia de canal</p>
       <h2 class="display-l" style="margin-bottom:var(--s5)">Por qué exclusiva<br>y no intensiva.</h2>
-      <p class="lede" style="margin-bottom:var(--s7)">La categoría de higiene femenina opera casi sin excepción en distribución intensiva. Aura opera en el extremo opuesto durante su fase de lanzamiento. La decisión sacrifica cobertura y compra control.</p>
+      <p class="lede" style="margin-bottom:var(--s7)">La categoría de higiene femenina opera casi sin excepción en distribución intensiva. Aura opera en el extremo opuesto durante su fase de lanzamiento: seis puntos, una sola ciudad. La decisión sacrifica cobertura y compra control.</p>
 
       <figure class="figure" style="margin-top:0">
         <img src="assets/img/fig-distribucion.svg" alt="Diagrama comparativo de distribución intensiva, selectiva y exclusiva" width="780" height="330" loading="lazy">
-        <figcaption>Aura opera en el tercer modelo. La transición a distribución selectiva está condicionada a dos métricas: seis meses sin quiebres de inventario y un protocolo de capacitación replicable sin presencia del equipo.</figcaption>
+        <figcaption>Aura opera en el tercer modelo. La expansión avanza por fases con condición de entrada medible, no por fecha: primero ampliar dentro de San Pedro Sula, después Tegucigalpa, y solo al final la transición a distribución selectiva.</figcaption>
       </figure>
 
       <div class="spec-label" style="max-width:none;margin-top:var(--s7)">
@@ -466,9 +461,9 @@ MARCA = f"""
     <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s6);align-items:center;justify-content:space-between">
       <div style="max-width:42ch">
         <h2 class="display-m" style="margin-bottom:var(--s3)">La estrategia empieza en el artículo de lanzamiento.</h2>
-        <p style="margin:0;opacity:.85;font-family:var(--read)">Ahí está desarrollada la decisión de canal, con los criterios de selección de los catorce puntos.</p>
+        <p style="margin:0;opacity:.85;font-family:var(--read)">Ahí está desarrollada la decisión de canal, con los criterios de selección de los seis puntos y las razones para elegir San Pedro Sula como plaza de entrada.</p>
       </div>
-      <a class="btn btn--solid" href="articulos/lanzamiento-aura-honduras.html">Leer el lanzamiento</a>
+      <a class="btn btn--solid" href="articulos/lanzamiento-aura-san-pedro-sula.html">Leer el lanzamiento</a>
     </div>
   </section>
 """

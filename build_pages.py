@@ -68,12 +68,13 @@ SHELL = """<!DOCTYPE html>
           </svg>
           <span style="font-family:var(--display);font-size:1.4rem">aura</span>
         </a>
-        <p class="foot__blurb">Toallas sanitarias de fibra vegetal con la composición publicada. Puerto Cortés, Honduras.</p>
+        <p class="foot__blurb">Toallas sanitarias de fibra vegetal con la composición publicada. San Pedro Sula, Honduras.</p>
       </div>
 
       <div>
         <h4>Blog</h4>
         <ul>
+          <li><a href="{p}articulos/lanzamiento-aura-san-pedro-sula.html">Lanzamiento</a></li>
           <li><a href="{p}articulos/greenwashing-marketing-verde.html">Greenwashing</a></li>
           <li><a href="{p}articulos/plastico-en-toallas-sanitarias.html">Plástico en toallas</a></li>
           <li><a href="{p}articulos/quimicos-en-productos-menstruales.html">Química y piel</a></li>
@@ -494,7 +495,7 @@ REL = {
     "normas": ("NORMATIVA", "Biodegradable y compostable no significan lo mismo", "biodegradable-o-compostable.html"),
     "pobreza": ("CONTEXTO", "Pobreza menstrual: el costo de no poder elegir", "pobreza-menstrual-america-latina.html"),
     "green":   ("MERCADEO", "Greenwashing: el 53 % de las promesas verdes no resiste una revisión", "greenwashing-marketing-verde.html"),
-    "lanza":   ("LANZAMIENTO", "Aura llega a Honduras, y solo a catorce lugares", "lanzamiento-aura-honduras.html"),
+    "lanza":   ("LANZAMIENTO", "Aura llega a San Pedro Sula, y solo a seis lugares", "lanzamiento-aura-san-pedro-sula.html"),
 }
 
 ARTICLES = [
