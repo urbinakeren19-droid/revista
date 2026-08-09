@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | Tu ciclo. Tu comodidad. Un futuro más consciente.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Lora for elegant editorial headings, Manrope for clean, modern body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#F9F8F6', // Warm white/beige background
+                        'brand-dark': '#213026', // Deep forest green
+                        'brand-sage': '#9CAEA9', // Sage green
+                        'brand-earth': '#C4B4A4', // Earthy beige
+                        'brand-accent': '#D8C8B8', // Lighter accent
+                    },
+                    fontFamily: {
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F9F8F6;
+            color: #213026;
+        }
+        
+        /* Subtle fade-up animation for scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delay utilities for staggered animations */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Custom underline hover effect for links */
+        .link-underline {
+            position: relative;
+            text-decoration: none;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .link-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Specific image object-fit utility for editorial feel */
+        .img-editorial {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-brand-dark selection:bg-brand-sage selection:text-white">
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="main-header">
+        <div class="absolute inset-0 bg-brand-bg/90 backdrop-blur-md shadow-sm opacity-0 transition-opacity duration-300" id="header-bg"></div>
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex items-center justify-between h-20 md:h-24">
+                
+                <!-- Logo -->
+                <a href="#" class="font-serif text-2xl tracking-widest font-medium">AURA.</a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wide uppercase">
+                    <a href="#historia" class="link-underline hover:text-brand-sage transition-colors">Nuestra historia</a>
+                    <a href="#producto" class="link-underline hover:text-brand-sage transition-colors">El producto</a>
+                    <a href="#sostenibilidad" class="link-underline hover:text-brand-sage transition-colors">Sostenibilidad</a>
+                    <a href="#distribucion" class="link-underline hover:text-brand-sage transition-colors">Distribución</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="#descubrir" class="hidden md:inline-flex bg-brand-dark text-white px-6 py-3 text-xs tracking-widest uppercase hover:bg-brand-sage transition-colors duration-300">
+                        Descubrir la colección
+                    </a>
+                    
+                    <button id="mobile-menu-btn" class="md:hidden focus:outline-none p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-bg z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center">
+            <button id="close-menu-btn" class="absolute top-8 right-6 p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <nav class="flex flex-col space-y-8 text-center text-2xl font-serif">
+                <a href="#historia" class="mobile-link hover:text-brand-sage">Nuestra historia</a>
+                <a href="#producto" class="mobile-link hover:text-brand-sage">El producto</a>
+                <a href="#sostenibilidad" class="mobile-link hover:text-brand-sage">Sostenibilidad</a>
+                <a href="#distribucion" class="mobile-link hover:text-brand-sage">Distribución</a>
+                <a href="#descubrir" class="mt-8 text-sm font-sans tracking-widest uppercase border-b border-brand-dark pb-1">Descubrir la colección</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20">
+        <!-- Background Image (Editorial Style Product/Nature abstract) -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1615486171449-74e5088f7b76?q=80&w=2000&auto=format&fit=crop" alt="Textura natural y orgánica" class="img-editorial opacity-90 object-center">
+            <!-- Subtle gradient overlay for text legibility without looking "generic" -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-brand-bg/20 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl mt-20">
+            <span class="block text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-brand-dark reveal">La belleza de elegir mejor</span>
+            
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 reveal delay-100 text-brand-dark">
+                Tu ciclo también puede ser parte del cambio.
+            </h1>
+            
+            <p class="text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto text-brand-dark/80 reveal delay-200">
+                Conoce una nueva propuesta de cuidado menstrual que combina comodidad, diseño y una forma más consciente de consumir.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 reveal delay-300">
+                <a href="#producto" class="bg-brand-dark text-brand-bg px-8 py-4 text-sm tracking-widest uppercase hover:bg-brand-sage transition-colors duration-300 w-full sm:w-auto">
+                    Descubrir el lanzamiento
+                </a>
+                <a href="#historia" class="group flex items-center gap-2 text-sm tracking-widest uppercase font-medium w-full sm:w-auto justify-center">
+                    <span class="link-underline">Conocer la historia</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="mt-20 reveal delay-300">
+                <span class="inline-block border border-brand-dark/20 px-4 py-2 text-xs tracking-[0.15em] uppercase text-brand-dark/60 bg-white/50 backdrop-blur-sm">
+                    Lanzamiento Exclusivo · 2026
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="py-24 md:py-32 overflow-hidden bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
+                
+                <!-- Text Column -->
+                <div class="lg:col-span-5 lg:col-start-2 order-2 lg:order-1 reveal">
+                    <h2 class="font-serif text-3xl md:text-5xl mb-8 leading-snug">Una nueva forma de vivir tu ciclo.</h2>
+                    <div class="space-y-6 text-brand-dark/70 font-light text-lg leading-relaxed">
+                        <p>
+                            El cuidado menstrual forma parte de la vida cotidiana de millones de personas. Por eso creemos que elegir un producto para esos días también puede ser una oportunidad para tomar decisiones más conscientes.
+                        </p>
+                        <p>
+                            AURA nace de la idea de que la comodidad no debe estar reñida con el diseño ni con la responsabilidad. Hemos creado una línea pensada para acompañarte, respetando tu ritmo y buscando un menor impacto en nuestro entorno.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image Column (Asymmetrical) -->
+                <div class="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 reveal delay-100">
+                    <div class="relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden">
+                        <!-- High quality lifestyle placeholder -->
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop" alt="Mujer en un ambiente natural" class="img-editorial hover:scale-105 transition-transform duration-1000">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="producto" class="py-24 md:py-32 bg-brand-bg">
+        <div class="container mx-auto px-6 md:px-12 text-center mb-16">
+            <h2 class="font-serif text-4xl md:text-5xl reveal">Conoce el producto</h2>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <!-- Grid for Desktop, Stack for Mobile -->
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-12 md:gap-8">
+                
+                <!-- Left Features -->
+                <div class="space-y-12 md:text-right order-2 md:order-1">
+                    <div class="reveal delay-100">
+                        <h3 class="font-serif text-xl mb-3">Comodidad absoluta</h3>
+                        <p class="font-light text-brand-dark/70 text-sm">Materiales seleccionados por su suavidad, adaptándose a los movimientos de tu cuerpo sin restricciones.</p>
+                    </div>
+                    <div class="reveal delay-200">
+                        <h3 class="font-serif text-xl mb-3">Diseño para el día a día</h3>
+                        <p class="font-light text-brand-dark/70 text-sm">Estructura anatómica que busca brindar seguridad y discreción cuando más lo necesitas.</p>
+                    </div>
+                </div>
+
+                <!-- Center Main Image -->
+                <div class="order-1 md:order-2 px-8 md:px-0 reveal">
+                    <div class="relative aspect-square md:aspect-[3/4] bg-[#EBE7E0] p-8 flex items-center justify-center shadow-sm">
+                        <!-- Product packaging mock style image -->
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" alt="Empaque de AURA" class="object-cover w-full h-full border border-brand-dark/5">
+                        
+                        <!-- Subtle decorative frame -->
+                        <div class="absolute inset-4 border border-brand-dark/10 pointer-events-none"></div>
+                    </div>
+                </div>
+
+                <!-- Right Features -->
+                <div class="space-y-12 text-left order-3">
+                    <div class="reveal delay-100">
+                        <h3 class="font-serif text-xl mb-3">Una propuesta más consciente</h3>
+                        <p class="font-light text-brand-dark/70 text-sm">Integrando opciones que buscan reducir la huella tradicional, desde el diseño hasta tu hogar.</p>
+                    </div>
+                    <div class="reveal delay-200">
+                        <h3 class="font-serif text-xl mb-3">Presentación cuidada</h3>
+                        <p class="font-light text-brand-dark/70 text-sm">Un empaque estético y discreto que no desentona en tu espacio personal, pensado hasta el último detalle.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="sostenibilidad" class="py-24 md:py-32 bg-white">
+        <div class="container mx-auto px-6 md:px-12 text-center mb-16 md:mb-24 reveal">
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-sage mb-4 block">Filosofía</span>
+            <h2 class="font-serif text-3xl md:text-5xl">Pequeñas decisiones.<br/>Un impacto diferente.</h2>
+            <p class="mt-6 max-w-2xl mx-auto font-light text-brand-dark/70 text-lg">
+                Buscamos incorporar criterios de sostenibilidad en el desarrollo, presentación y distribución. No se trata de perfección, sino de avanzar hacia opciones más respetuosas.
+            </p>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                
+                <!-- Card 1 -->
+                <div class="reveal delay-100 group">
+                    <div class="aspect-[4/3] overflow-hidden mb-6 bg-brand-bg">
+                        <img src="https://images.unsplash.com/photo-1603513364495-23db1b017b2e?q=80&w=800&auto=format&fit=crop" alt="Textura de algodón natural" class="img-editorial group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3">Pensado con conciencia</h3>
+                    <p class="font-light text-sm text-brand-dark/70">Selección cuidadosa de componentes buscando equilibrar el rendimiento óptimo con el respeto por la naturaleza.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal delay-200 group">
+                    <div class="aspect-[4/3] overflow-hidden mb-6 bg-brand-bg">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop" alt="Hojas naturales" class="img-editorial group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3">Menos desperdicio</h3>
+                    <p class="font-light text-sm text-brand-dark/70">Repensando el empaque para minimizar elementos innecesarios, favoreciendo presentaciones más limpias y eficientes.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal delay-300 group">
+                    <div class="aspect-[4/3] overflow-hidden mb-6 bg-brand-bg">
+                        <img src="https://images.unsplash.com/photo-1445445290350-18a3b86e0b5b?q=80&w=800&auto=format&fit=crop" alt="Papel texturizado" class="img-editorial group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3">Una nueva manera de consumir</h3>
+                    <p class="font-light text-sm text-brand-dark/70">Fomentamos la compra reflexiva. Un producto diseñado para quienes valoran la calidad, la estética y el propósito detrás de una marca.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-2 px-4">
+        <div class="relative w-full overflow-hidden h-[60vh] md:h-[70vh] flex items-center justify-center text-white reveal">
+            <!-- Dramatic close up image -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1621285223398-3484c2642637?q=80&w=2000&auto=format&fit=crop" alt="Detalle abstracto natural" class="img-editorial filter brightness-75">
+            </div>
+            
+            <div class="relative z-10 text-center px-6 max-w-3xl">
+                <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 uppercase tracking-wide">No es solo lo que usas.</h2>
+                <p class="text-xl md:text-2xl font-light mb-10 opacity-90">También importa lo que eliges apoyar.</p>
+                <a href="#" class="inline-block border border-white px-8 py-4 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-brand-dark transition-colors duration-500">
+                    Descubrir la marca
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="distribucion" class="py-24 md:py-32 bg-brand-dark text-brand-bg">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="reveal">
+                    <span class="text-brand-sage text-xs font-semibold tracking-widest uppercase mb-4 block">Estrategia de Lanzamiento</span>
+                    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">No estará en todas partes.</h2>
+                    <p class="font-light text-lg mb-8 opacity-80 leading-relaxed max-w-lg">
+                        Para mantener la calidad de la experiencia y asegurar una introducción cuidadosa en el mercado, hemos elegido una estrategia de distribución exclusiva.
+                    </p>
+                    <p class="font-light text-lg mb-10 opacity-80 leading-relaxed max-w-lg">
+                        Esto significa que AURA estará disponible inicialmente de manera limitada, únicamente a través de puntos de venta seleccionados y canales autorizados que comparten nuestra visión.
+                    </p>
+                    
+                    <div class="mb-12 border-l-2 border-brand-sage pl-6 py-2">
+                        <p class="font-serif italic text-xl">Próximamente en puntos seleccionados.</p>
+                    </div>
+
+                    <a href="#" class="inline-block bg-brand-sage text-brand-dark px-8 py-4 text-sm tracking-widest uppercase font-medium hover:bg-brand-bg transition-colors duration-300">
+                        Conoce dónde encontrarlo
+                    </a>
+                </div>
+
+                <!-- Abstract / Architecture image for exclusivity feel -->
+                <div class="reveal delay-200">
+                    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1000&auto=format&fit=crop" alt="Espacio minimalista" class="w-full aspect-square md:aspect-[4/3] object-cover opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-brand-bg">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="max-w-xl">
+                    <span class="text-xs font-semibold tracking-widest uppercase mb-4 block text-brand-sage">Magazine</span>
+                    <h2 class="font-serif text-3xl md:text-4xl">Historias para vivir tu ciclo con otra mirada.</h2>
+                </div>
+                <a href="#" class="hidden md:inline-block border-b border-brand-dark pb-1 text-sm tracking-widest uppercase font-medium hover:text-brand-sage transition-colors mt-6 md:mt-0">Ver todas las notas</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Article 1 -->
+                <article class="reveal group cursor-pointer">
+                    <div class="overflow-hidden aspect-[4/5] mb-6">
+                        <img src="https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=800&auto=format&fit=crop" alt="Estilo de vida consciente" class="img-editorial group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 mb-3 block">Estilo de vida</span>
+                    <h3 class="font-serif text-xl leading-snug group-hover:text-brand-sage transition-colors">¿Qué significa realmente elegir productos más conscientes?</h3>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="reveal delay-100 group cursor-pointer">
+                    <div class="overflow-hidden aspect-[4/5] mb-6">
+                        <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?q=80&w=800&auto=format&fit=crop" alt="Diseño y naturaleza" class="img-editorial group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 mb-3 block">Innovación</span>
+                    <h3 class="font-serif text-xl leading-snug group-hover:text-brand-sage transition-colors">El futuro del cuidado menstrual también puede ser sostenible.</h3>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="reveal delay-200 group cursor-pointer">
+                    <div class="overflow-hidden aspect-[4/5] mb-6">
+                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=800&auto=format&fit=crop" alt="Detalle de diseño" class="img-editorial group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 mb-3 block">Detrás de marca</span>
+                    <h3 class="font-serif text-xl leading-snug group-hover:text-brand-sage transition-colors">Detrás del diseño de nuestra nueva generación de productos.</h3>
+                </article>
+
+            </div>
+            
+            <div class="mt-12 text-center md:hidden reveal">
+                 <a href="#" class="inline-block border-b border-brand-dark pb-1 text-sm tracking-widest uppercase font-medium">Ver todas las notas</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-[#EBE7E0]">
+        <div class="container mx-auto px-6 max-w-2xl text-center reveal">
+            <h2 class="font-serif text-3xl md:text-4xl mb-6">Forma parte del comienzo</h2>
+            <p class="font-light text-brand-dark/70 mb-10">
+                Recibe novedades exclusivas sobre el lanzamiento, nuevos productos y la lista actualizada de puntos de distribución autorizados.
+            </p>
+            
+            <form class="flex flex-col sm:flex-row border-b border-brand-dark focus-within:border-brand-sage transition-colors">
+                <input type="email" placeholder="Tu correo electrónico" class="bg-transparent border-none outline-none py-4 px-2 w-full font-light text-brand-dark placeholder-brand-dark/40" required>
+                <button type="submit" class="py-4 px-6 text-sm tracking-widest uppercase font-medium hover:text-brand-sage transition-colors whitespace-nowrap text-left sm:text-center mt-2 sm:mt-0">
+                    Quiero enterarme
+                </button>
+            </form>
+            <p class="text-[10px] mt-4 text-brand-dark/40">Al suscribirte aceptas nuestra política de privacidad.</p>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-20 pb-10 border-t border-brand-dark/10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="font-serif text-2xl tracking-widest font-medium block mb-6">AURA.</a>
+                    <p class="font-serif italic text-brand-dark/70 mb-6">Belleza, comodidad y decisiones más conscientes.</p>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-xs tracking-widest uppercase font-semibold mb-6">Explorar</h4>
+                    <ul class="space-y-3 text-sm font-light text-brand-dark/70">
+                        <li><a href="#historia" class="hover:text-brand-sage transition-colors">Nuestra historia</a></li>
+                        <li><a href="#producto" class="hover:text-brand-sage transition-colors">El producto</a></li>
+                        <li><a href="#sostenibilidad" class="hover:text-brand-sage transition-colors">Sostenibilidad</a></li>
+                        <li><a href="#distribucion" class="hover:text-brand-sage transition-colors">Distribución exclusiva</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-xs tracking-widest uppercase font-semibold mb-6">Soporte</h4>
+                    <ul class="space-y-3 text-sm font-light text-brand-dark/70">
+                        <li><a href="#" class="hover:text-brand-sage transition-colors">Contacto</a></li>
+                        <li><a href="#" class="hover:text-brand-sage transition-colors">Preguntas Frecuentes</a></li>
+                        <li><a href="#" class="hover:text-brand-sage transition-colors">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-brand-sage transition-colors">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Socials -->
+                <div>
+                    <h4 class="text-xs tracking-widest uppercase font-semibold mb-6">Conecta</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-brand-dark/70 hover:text-brand-sage transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="text-brand-dark/70 hover:text-brand-sage transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-dark/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light text-brand-dark/50">
+                <p>&copy; 2026 AURA. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Diseñado conscientemente.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isOpen = !mobileMenu.classList.contains('translate-x-full');
+                if (isOpen) {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = 'auto'; // Restore scroll
+                } else {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden'; // Prevent scroll
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+            // 2. Header Scroll Effect
+            const headerBg = document.getElementById('header-bg');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    headerBg.classList.remove('opacity-0');
+                    headerBg.classList.add('opacity-100');
+                } else {
+                    headerBg.classList.remove('opacity-100');
+                    headerBg.classList.add('opacity-0');
+                }
+            });
+
+            // 3. Scroll Reveal Animation using Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        // Stop observing once revealed for better performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+            
+            // Trigger initial check for elements already in viewport on load
+            setTimeout(() => {
+                 revealElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
