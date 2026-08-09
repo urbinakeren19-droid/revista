@@ -46,10 +46,9 @@ SHELL = """<!DOCTYPE html>
 
     <nav class="nav" id="nav">
       <a href="{p}index.html"{c_home}>Inicio</a>
+      <a href="{p}blog.html"{c_sci}>Blog</a>
       <a href="{p}producto.html"{c_prod}>Producto</a>
-      <a href="{p}ciencia.html"{c_sci}>Investigación</a>
-      <a href="{p}index.html#preguntas">Preguntas</a>
-      <a class="btn btn--solid" href="{p}producto.html#comprar">Pedir por WhatsApp</a>
+      <a href="{p}marca.html"{c_mark}>Marca</a>
     </nav>
   </div>
 </header>
@@ -73,18 +72,9 @@ SHELL = """<!DOCTYPE html>
       </div>
 
       <div>
-        <h4>Producto</h4>
+        <h4>Blog</h4>
         <ul>
-          <li><a href="{p}producto.html">Fichas técnicas</a></li>
-          <li><a href="{p}index.html#composicion">Composición</a></li>
-          <li><a href="{p}producto.html#comprar">Dónde comprar</a></li>
-          <li><a href="{p}index.html#preguntas">Preguntas</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Investigación</h4>
-        <ul>
+          <li><a href="{p}articulos/greenwashing-marketing-verde.html">Greenwashing</a></li>
           <li><a href="{p}articulos/plastico-en-toallas-sanitarias.html">Plástico en toallas</a></li>
           <li><a href="{p}articulos/quimicos-en-productos-menstruales.html">Química y piel</a></li>
           <li><a href="{p}articulos/biodegradable-o-compostable.html">Normas de compostaje</a></li>
@@ -93,11 +83,20 @@ SHELL = """<!DOCTYPE html>
       </div>
 
       <div>
+        <h4>La marca</h4>
+        <ul>
+          <li><a href="{p}producto.html">El producto</a></li>
+          <li><a href="{p}index.html#composicion">Composición</a></li>
+          <li><a href="{p}marca.html">Estrategia de marca</a></li>
+          <li><a href="{p}blog.html#metodo">Método editorial</a></li>
+        </ul>
+      </div>
+
+      <div>
         <h4>Contacto</h4>
         <ul>
-          <li><a href="https://wa.me/504XXXXXXXX">WhatsApp</a></li>
           <li><a href="mailto:hola@aura.hn">hola@aura.hn</a></li>
-          <li><a href="https://instagram.com/">Instagram</a></li>
+          <li><a href="{p}blog.html">Todos los artículos</a></li>
         </ul>
       </div>
     </div>
@@ -127,6 +126,7 @@ def render(path, title, desc, body, depth=0, active="", ogtype="website",
         c_home=CUR if active == "home" else "",
         c_prod=CUR if active == "prod" else "",
         c_sci=CUR if active == "sci" else "",
+        c_mark=CUR if active == "mark" else "",
     )
     full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -187,11 +187,11 @@ def article(kicker, title, dek, author, date, read, body_html, refs, related):
 
   <section class="band band--garnet band--tight">
     <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s6);align-items:center;justify-content:space-between">
-      <div style="max-width:38ch">
-        <h2 class="display-m" style="margin-bottom:var(--s3)">Aura publica su composición completa.</h2>
-        <p style="margin:0;opacity:.85;font-family:var(--read)">Cinco capas, su material y su vía de degradación. Sin letra chica.</p>
+      <div style="max-width:40ch">
+        <h2 class="display-m" style="margin-bottom:var(--s3)">Cómo escribimos esto.</h2>
+        <p style="margin:0;opacity:.85;font-family:var(--read)">Las cinco reglas editoriales que seguimos, incluida la de publicar los datos que nos contradicen.</p>
       </div>
-      <a class="btn btn--solid" href="../index.html#composicion">Ver la etiqueta</a>
+      <a class="btn btn--solid" href="../blog.html#metodo">Ver el método</a>
     </div>
   </section>
 """
@@ -493,6 +493,8 @@ REL = {
     "quimicos": ("SALUD", "Qué encontraron los laboratorios en las toallas convencionales", "quimicos-en-productos-menstruales.html"),
     "normas": ("NORMATIVA", "Biodegradable y compostable no significan lo mismo", "biodegradable-o-compostable.html"),
     "pobreza": ("CONTEXTO", "Pobreza menstrual: el costo de no poder elegir", "pobreza-menstrual-america-latina.html"),
+    "green":   ("MERCADEO", "Greenwashing: el 53 % de las promesas verdes no resiste una revisión", "greenwashing-marketing-verde.html"),
+    "lanza":   ("LANZAMIENTO", "Aura llega a Honduras, y solo a catorce lugares", "lanzamiento-aura-honduras.html"),
 }
 
 ARTICLES = [
@@ -504,7 +506,7 @@ ARTICLES = [
         desc="Revisión de la evidencia sobre contenido plástico en toallas sanitarias convencionales: qué dicen los análisis de ciclo de vida, los estudios de composición y por qué la cifra del 90 % es difícil de auditar.",
         author="Equipo Aura", date="Actualizado en agosto de 2026", read="8 min",
         body=A1_BODY, refs=A1_REFS,
-        related=[REL["quimicos"], REL["normas"], REL["pobreza"]],
+        related=[REL["lanza"], REL["quimicos"], REL["green"]],
     ),
     dict(
         slug="quimicos-en-productos-menstruales.html",
@@ -514,7 +516,7 @@ ARTICLES = [
         desc="Qué detectaron los estudios de Park (2019), Gao y Kannan (2020) y trabajos posteriores en toallas sanitarias, y qué límites tiene esa evidencia según la revisión de Brookings.",
         author="Equipo Aura", date="Actualizado en agosto de 2026", read="10 min",
         body=A2_BODY, refs=A2_REFS,
-        related=[REL["plastico"], REL["normas"], REL["pobreza"]],
+        related=[REL["plastico"], REL["green"], REL["pobreza"]],
     ),
     dict(
         slug="biodegradable-o-compostable.html",
@@ -524,7 +526,7 @@ ARTICLES = [
         desc="Guía sobre las normas EN 13432, ASTM D6400 y AS 4736: requisitos de biodegradación, desintegración, ecotoxicidad y metales pesados, y cómo leer una afirmación ambiental en un empaque.",
         author="Equipo Aura", date="Actualizado en agosto de 2026", read="9 min",
         body=A3_BODY, refs=A3_REFS,
-        related=[REL["plastico"], REL["quimicos"], REL["pobreza"]],
+        related=[REL["plastico"], REL["quimicos"], REL["green"]],
     ),
     dict(
         slug="pobreza-menstrual-america-latina.html",
@@ -534,7 +536,7 @@ ARTICLES = [
         desc="Datos de ONU Mujeres, UNESCO y AHF sobre pobreza menstrual en América Latina, políticas públicas de la región y el papel que le corresponde a una marca privada.",
         author="Equipo Aura", date="Actualizado en agosto de 2026", read="7 min",
         body=A4_BODY, refs=A4_REFS,
-        related=[REL["plastico"], REL["quimicos"], REL["normas"]],
+        related=[REL["lanza"], REL["green"], REL["normas"]],
     ),
 ]
 

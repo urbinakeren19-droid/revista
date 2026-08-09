@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Figura: comparación de las tres intensidades de distribución."""
+
+SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 330" role="img" aria-label="Comparación entre distribución intensiva, selectiva y exclusiva">
+  <rect width="780" height="330" fill="#1B0E13"/>
+
+  <text x="34" y="42" fill="#E6E8DD" font-family="Georgia, serif" font-size="21">Tres formas de cubrir un mercado</text>
+  <text x="34" y="64" fill="#E5A83B" font-family="Courier New, monospace" font-size="10.5" letter-spacing="1">CADA PUNTO ES UN MINORISTA DISPONIBLE EN EL TERRITORIO</text>
+
+  <!-- separadores -->
+  <line x1="272" y1="92" x2="272" y2="292" stroke="#3A2130"/>
+  <line x1="510" y1="92" x2="510" y2="292" stroke="#3A2130"/>
+
+  <!-- ============ INTENSIVA ============ -->
+  <text x="34" y="112" fill="#E6E8DD" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Intensiva</text>
+  <text x="34" y="130" fill="#E6E8DD" opacity=".55" font-family="Courier New, monospace" font-size="9.5">TODO PUNTO POSIBLE</text>
+  <g fill="#8C1D33">
+    <circle cx="46" cy="164" r="7"/><circle cx="76" cy="164" r="7"/><circle cx="106" cy="164" r="7"/><circle cx="136" cy="164" r="7"/><circle cx="166" cy="164" r="7"/><circle cx="196" cy="164" r="7"/><circle cx="226" cy="164" r="7"/>
+    <circle cx="46" cy="192" r="7"/><circle cx="76" cy="192" r="7"/><circle cx="106" cy="192" r="7"/><circle cx="136" cy="192" r="7"/><circle cx="166" cy="192" r="7"/><circle cx="196" cy="192" r="7"/><circle cx="226" cy="192" r="7"/>
+    <circle cx="46" cy="220" r="7"/><circle cx="76" cy="220" r="7"/><circle cx="106" cy="220" r="7"/><circle cx="136" cy="220" r="7"/><circle cx="166" cy="220" r="7"/><circle cx="196" cy="220" r="7"/><circle cx="226" cy="220" r="7"/>
+  </g>
+  <text x="34" y="262" fill="#E6E8DD" opacity=".7" font-family="Helvetica, Arial, sans-serif" font-size="10.5">Máxima cobertura.</text>
+  <text x="34" y="278" fill="#E6E8DD" opacity=".7" font-family="Helvetica, Arial, sans-serif" font-size="10.5">Mínimo control del mensaje.</text>
+
+  <!-- ============ SELECTIVA ============ -->
+  <text x="300" y="112" fill="#E6E8DD" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Selectiva</text>
+  <text x="300" y="130" fill="#E6E8DD" opacity=".55" font-family="Courier New, monospace" font-size="9.5">PUNTOS QUE CUMPLEN CRITERIOS</text>
+  <g>
+    <g fill="#3A2130">
+      <circle cx="312" cy="164" r="7"/><circle cx="372" cy="164" r="7"/><circle cx="432" cy="164" r="7"/>
+      <circle cx="342" cy="192" r="7"/><circle cx="462" cy="192" r="7"/>
+      <circle cx="312" cy="220" r="7"/><circle cx="402" cy="220" r="7"/><circle cx="462" cy="220" r="7"/>
+    </g>
+    <g fill="#8C1D33">
+      <circle cx="342" cy="164" r="7"/><circle cx="402" cy="164" r="7"/><circle cx="462" cy="164" r="7"/>
+      <circle cx="312" cy="192" r="7"/><circle cx="372" cy="192" r="7"/><circle cx="402" cy="192" r="7"/><circle cx="432" cy="192" r="7"/>
+      <circle cx="342" cy="220" r="7"/><circle cx="372" cy="220" r="7"/><circle cx="432" cy="220" r="7"/>
+    </g>
+  </g>
+  <text x="300" y="262" fill="#E6E8DD" opacity=".7" font-family="Helvetica, Arial, sans-serif" font-size="10.5">Cobertura media.</text>
+  <text x="300" y="278" fill="#E6E8DD" opacity=".7" font-family="Helvetica, Arial, sans-serif" font-size="10.5">Control parcial.</text>
+
+  <!-- ============ EXCLUSIVA ============ -->
+  <text x="538" y="112" fill="#E5A83B" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Exclusiva</text>
+  <text x="538" y="130" fill="#E5A83B" opacity=".75" font-family="Courier New, monospace" font-size="9.5">UN ALIADO POR TERRITORIO</text>
+  <g>
+    <g fill="#3A2130">
+      <circle cx="550" cy="164" r="7"/><circle cx="580" cy="164" r="7"/><circle cx="640" cy="164" r="7"/><circle cx="670" cy="164" r="7"/><circle cx="700" cy="164" r="7"/><circle cx="730" cy="164" r="7"/>
+      <circle cx="550" cy="192" r="7"/><circle cx="580" cy="192" r="7"/><circle cx="610" cy="192" r="7"/><circle cx="670" cy="192" r="7"/><circle cx="700" cy="192" r="7"/><circle cx="730" cy="192" r="7"/>
+      <circle cx="550" cy="220" r="7"/><circle cx="610" cy="220" r="7"/><circle cx="640" cy="220" r="7"/><circle cx="670" cy="220" r="7"/><circle cx="700" cy="220" r="7"/><circle cx="730" cy="220" r="7"/>
+    </g>
+    <circle cx="610" cy="164" r="11" fill="#E5A83B"/>
+    <circle cx="640" cy="192" r="11" fill="#E5A83B"/>
+    <circle cx="580" cy="220" r="11" fill="#E5A83B"/>
+  </g>
+  <text x="538" y="262" fill="#E5A83B" font-family="Helvetica, Arial, sans-serif" font-size="10.5">Cobertura baja.</text>
+  <text x="538" y="278" fill="#E5A83B" font-family="Helvetica, Arial, sans-serif" font-size="10.5">Control total del mensaje y del precio.</text>
+
+  <line x1="34" y1="306" x2="746" y2="306" stroke="#3A2130"/>
+  <text x="34" y="324" fill="#E6E8DD" opacity=".45" font-family="Courier New, monospace" font-size="9">AURA OPERA EN EL TERCER MODELO DURANTE SU FASE DE LANZAMIENTO</text>
+</svg>'''
+
+with open("/home/claude/aura/assets/img/fig-distribucion.svg", "w", encoding="utf-8") as f:
+    f.write(SVG)
+print("escrito: fig-distribucion.svg")

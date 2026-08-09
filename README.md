@@ -1,92 +1,127 @@
-# Aura — sitio web
+# Aura — blog de marca
 
 Sitio estático, sin build. HTML, CSS y JavaScript plano. Se sube tal cual a
-GitHub Pages, Netlify, Vercel o cualquier hosting.
+GitHub Pages, Netlify o cualquier hosting.
+
+---
+
+## Cómo responde a la consigna
+
+> *«Publicación en Blog/Página web: Creación de un artículo promocionando el
+> lanzamiento de una marca eco-amigable utilizando una estrategia de
+> distribución exclusiva.»*
+
+| Elemento pedido | Dónde está |
+|---|---|
+| **El artículo de lanzamiento** | `articulos/lanzamiento-aura-honduras.html` — pieza principal, destacada en la portada |
+| **Marca eco-amigable** | Aura: toalla sanitaria de fibra vegetal. Composición completa publicada en `index.html#composicion` |
+| **Estrategia de distribución exclusiva** | Desarrollada en el artículo: comparación de los tres modelos de intensidad, cuatro razones de la elección, criterios de selección de puntos y contraprestación al aliado |
+| **Publicación en blog / web** | Sitio completo de 11 páginas con 6 artículos y 49 referencias |
+
+**El artículo de lanzamiento es la entrega.** Todo lo demás existe para
+sostenerlo: el blog le da contexto, la ficha de producto lista los catorce
+puntos y `marca.html` documenta el razonamiento estratégico.
+
+### Conceptos de mercadeo que quedan demostrados
+
+- **Intensidad de distribución.** Intensiva, selectiva y exclusiva comparadas
+  y graficadas (`assets/img/fig-distribucion.svg`). Se justifica por qué una
+  categoría que normalmente es intensiva opera aquí en el extremo opuesto.
+- **Exclusividad recíproca.** El aliado no vende competencia directa; la marca
+  no vende a otro minorista en su radio. Con la contraprestación explícita:
+  margen superior, capacitación pagada y protección territorial.
+- **Control de precio por canal.** Política de precio única como consecuencia
+  directa del contrato de exclusividad.
+- **Mezcla de mercadeo.** Las cuatro P desarrolladas en `marca.html`.
+- **Posicionamiento y segmentación.** Enunciado de posicionamiento con sus
+  cuatro consecuencias operativas, más tres perfiles de audiencia.
+- **Mercadeo de contenidos.** Cuatro pilares editoriales, con la explicación
+  de por qué el pilar que no vende es el que da credibilidad a los otros tres.
+- **Métricas.** Cuatro indicadores, con el argumento de por qué en
+  distribución exclusiva la venta total es una métrica engañosa.
+- **Comunicación ambiental y greenwashing.** Datos de la Comisión Europea y
+  jurisprudencia europea reciente, en `articulos/greenwashing-marketing-verde.html`.
+
+### Criterio de redacción
+
+Ninguna afirmación del sitio va sin fuente enlazada. Donde la evidencia es
+débil o contradice el argumento comercial de la marca, el texto lo dice. Dos
+ejemplos deliberados:
+
+- El artículo sobre química cita que los productos etiquetados como
+  «orgánicos» o «naturales» no presentaban necesariamente menos compuestos
+  volátiles — un dato que perjudica a la propia categoría de Aura.
+- El artículo sobre plástico admite que la cifra del 90 % que usa toda la
+  industria ecológica **no puede verificarse de forma independiente**.
+
+Si el trabajo se defiende oralmente, ese es el argumento fuerte: la
+credibilidad de las cifras favorables depende de haber publicado también las
+desfavorables.
+
+---
+
+## Estructura
 
 ```
 aura/
-├── index.html                     Portada (diagrama de capas + etiqueta de composición)
-├── producto.html                  Fichas técnicas y pedidos
-├── ciencia.html                   Índice de artículos + metodología editorial
+├── index.html                      Portada del blog, encabezada por el lanzamiento
+├── blog.html                       Índice de artículos + método editorial
+├── producto.html                   Fichas técnicas + los 14 puntos de venta
+├── marca.html                      Estrategia de marca completa
 ├── 404.html
 ├── articulos/
+│   ├── lanzamiento-aura-honduras.html        <- LA ENTREGA
+│   ├── greenwashing-marketing-verde.html
 │   ├── plastico-en-toallas-sanitarias.html
 │   ├── quimicos-en-productos-menstruales.html
 │   ├── biodegradable-o-compostable.html
 │   └── pobreza-menstrual-america-latina.html
 ├── assets/
-│   ├── css/aura.css               Todo el sistema visual
-│   ├── js/aura.js                 Sin dependencias
-│   └── img/                       SVG: empaques, favicon, figura de degradación
-├── .nojekyll                      Necesario en GitHub Pages
-├── robots.txt
-└── sitemap.xml
+│   ├── css/aura.css                Sistema visual completo
+│   ├── js/aura.js                  Sin dependencias
+│   └── img/                        SVG: empaques, figuras, favicon
+├── .nojekyll · robots.txt · sitemap.xml
+└── build_*.py                      Generadores de páginas (opcionales)
 ```
 
-Peso total: unos 224 KB. Sin frameworks, sin `node_modules`, sin paso de compilación.
+Peso total: unos 368 KB. Sin frameworks, sin `node_modules`, sin compilación.
 
 ---
 
-## Antes de publicar: reemplazos obligatorios
+## Datos ficticios que conviene ajustar
 
-Están marcados en el código con `EDITAR`. Búscalos con `grep -rn "EDITAR" .`
+Este es un ejercicio académico, así que varios datos son inventados de forma
+plausible. Si vas a presentarlo, revisá que la ficción sea coherente con lo
+que digas en la defensa.
 
-| Qué | Dónde | Ahora dice |
+| Dato | Valor actual | Nota |
 |---|---|---|
-| Número de WhatsApp | todas las páginas | `wa.me/504XXXXXXXX` |
-| Correo | pie de página y artículos | `hola@aura.hn` |
-| Instagram | pie de página | enlace vacío |
-| Precios | `index.html`, `producto.html` | L 65 / L 72 / L 58 |
-| Porcentajes de composición | `index.html`, sección `#composicion` | valores de ejemplo |
-| Medidas y unidades por paquete | `producto.html` | 240/320/155 mm |
-| Dominio | `sitemap.xml`, `robots.txt` | `aura.hn` |
+| Fecha de lanzamiento | 1 de septiembre | Ajustala a tu calendario |
+| Puntos de venta | 14, en 4 ciudades | Los nombres son genéricos («Farmacia — Barrio X») a propósito, para no atribuir nada a negocios reales |
+| Precios | L 65 / L 72 / L 58 | Coherentes con un posicionamiento superior |
+| Porcentajes de composición | Suman 100 % | Si los cambiás, verificá que sigan sumando 100 |
+| Correo | `hola@aura.hn` | Dominio ficticio |
+
+**Los datos científicos y regulatorios sí son reales** y están enlazados a su
+fuente: los estudios citados, las normas EN 13432 y ASTM D6400, las cifras de
+la Comisión Europea y los datos de ONU Mujeres y UNESCO.
 
 ---
 
-## La etiqueta de composición
+## Advertencia sobre afirmaciones ambientales
 
-Es el elemento central del sitio y el que sostiene todo el argumento. Los
-porcentajes actuales son de ejemplo y **suman 100 %**. Cuando los sustituyas
-por los de tu ficha técnica real, verificá que sigan sumando 100.
+El sitio está redactado para **no** afirmar que el producto está certificado.
+Dice que está en proceso de certificación, y esa redacción es deliberada: es
+parte del argumento del trabajo.
 
-Si tu proveedor no te entrega el desglose por capa con porcentajes, pedíselo
-por escrito antes de lanzar. Sin ese dato, la promesa central del sitio no se
-puede sostener.
+No la cambies. Las guías de publicidad ambiental consideran engañoso llamar
+«biodegradable» o «compostable certificado» a un producto sin evidencia de
+ensayo específica, y todo el sitio está construido sobre esa distinción.
+Un profesor que revise el detalle va a buscar precisamente eso.
 
----
-
-## Advertencia legal sobre afirmaciones ambientales
-
-El sitio está redactado deliberadamente para **no** afirmar que el producto
-está certificado. Dice que está en proceso de certificación.
-
-No cambies esa redacción hasta tener el certificado con código de
-trazabilidad. Las guías de publicidad ambiental (FTC Green Guides en EE. UU.,
-y criterios equivalentes en la UE) consideran engañoso llamar «biodegradable»
-o «compostable certificado» a un producto sin evidencia de ensayo específica.
-Es la clase de afirmación que puede costar una sanción o una denuncia de
-competencia desleal, y que además destruye exactamente la credibilidad que
-este sitio está construido para generar.
-
-Lo mismo aplica a las afirmaciones de salud. Los artículos citan estudios
-sobre presencia de compuestos, no sobre daño demostrado, y esa distinción
-está hecha a propósito.
-
----
-
-## Fotografía
-
-Los empaques son ilustraciones SVG, no fotos. Funcionan bien para lanzar,
-pero cuando tengas producto físico conviene sustituirlas.
-
-Reemplazá los `<img src="assets/img/pack-*.svg">` por tus fotos. Mantené
-proporción vertical (aprox. 4:5) y fondo oscuro o recortado.
-
-Tres tomas que valen más que cualquier render:
-
-1. El paquete abierto con las toallas visibles.
-2. Un corte transversal real que muestre las capas — es la foto que respalda el hero.
-3. La toalla en la mano, para dar escala.
+Lo mismo con las afirmaciones de salud: los artículos citan estudios sobre
+*presencia* de compuestos, no sobre daño demostrado, y la diferencia está
+señalada de forma explícita.
 
 ---
 
@@ -101,42 +136,40 @@ git remote add origin https://github.com/USUARIO/REPO.git
 git push -u origin main
 ```
 
-En el repositorio: **Settings → Pages → Source: Deploy from a branch → main → / (root)**.
+Settings → Pages → Deploy from a branch → main → / (root).
 
-El archivo `.nojekyll` ya está incluido; sin él, GitHub Pages ignora carpetas
-que empiezan con guion bajo y puede romper rutas.
-
-Para dominio propio, agregá un archivo `CNAME` con el dominio en la raíz.
+El `.nojekyll` ya está incluido. Para dominio propio, agregá un archivo
+`CNAME` con el dominio en la raíz.
 
 ---
 
-## Regenerar las páginas
+## Regenerar páginas
 
-Los artículos y las páginas interiores se generaron con dos scripts en Python
-que comparten una sola plantilla, para que el encabezado y el pie no se
-desincronicen entre páginas.
+Las páginas interiores se generan desde una plantilla común para que el menú
+y el pie no se desincronicen entre las once páginas.
 
 ```bash
-python3 build_pages.py    # los cuatro artículos
-python3 build_inner.py    # ciencia.html y producto.html
-python3 gen_packs.py      # los SVG de empaque
+python3 build_pages.py        # los 4 artículos base
+python3 build_art5.py         # artículo de greenwashing
+python3 build_lanzamiento.py  # artículo de lanzamiento
+python3 build_inner.py        # blog, producto y marca
+python3 gen_packs.py          # SVG de empaques
+python3 gen_fig_dist.py       # figura de distribución
 ```
 
-`index.html` y `404.html` se editan a mano.
-
-Si preferís no usar los scripts, podés editar el HTML directamente: el sitio
-funciona sin ellos. Solo recordá que un cambio en el menú hay que replicarlo
-en las siete páginas.
+`index.html` y `404.html` se editan a mano. El sitio funciona sin los scripts;
+solo tené presente que un cambio en el menú hay que replicarlo en cada página.
 
 ---
 
 ## Notas técnicas
 
-- Las fuentes se cargan desde Google Fonts. Young Serif, Newsreader,
-  Instrument Sans y DM Mono, todas con licencia libre para uso comercial.
-  Si querés independencia de red, descargalas y serví los `.woff2` localmente.
-- El sitio funciona sin JavaScript: el contenido es visible igual. El JS solo
+- Fuentes desde Google Fonts: Young Serif, Newsreader, Instrument Sans y
+  DM Mono. Todas con licencia libre para uso comercial.
+- El sitio funciona sin JavaScript: el contenido se ve igual. El JS solo
   agrega el diagrama interactivo, la calculadora, el menú móvil y las
   animaciones de entrada.
 - Respeta `prefers-reduced-motion`.
 - Navegación por teclado y foco visible en todos los controles.
+- Los empaques son ilustraciones SVG, no fotos. Si conseguís producto real,
+  reemplazá los `<img src="assets/img/pack-*.svg">` manteniendo proporción 4:5.
