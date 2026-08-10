@@ -1,5 +1,7 @@
 # Aura — blog de marca
 
+Toallas sanitarias **de tela reutilizables**, cosidas en San Pedro Sula.
+
 Sitio estático, sin build. HTML, CSS y JavaScript plano. Se sube tal cual a
 GitHub Pages, Netlify o cualquier hosting.
 
@@ -14,9 +16,9 @@ GitHub Pages, Netlify o cualquier hosting.
 | Elemento pedido | Dónde está |
 |---|---|
 | **El artículo de lanzamiento** | `articulos/lanzamiento-aura-san-pedro-sula.html` — pieza principal, destacada en la portada |
-| **Marca eco-amigable** | Aura: toalla sanitaria de fibra vegetal. Composición completa publicada en `index.html#composicion` |
+| **Marca eco-amigable** | Aura: toallas sanitarias de tela reutilizables. Composición, origen y vida útil publicadas en `index.html#composicion` |
 | **Estrategia de distribución exclusiva** | Desarrollada en el artículo: comparación de los tres modelos de intensidad, selección de plaza de entrada, cuatro razones de la elección, cinco criterios de selección de puntos y contraprestación al aliado |
-| **Publicación en blog / web** | Sitio completo de 11 páginas con 6 artículos y 49 referencias |
+| **Publicación en blog / web** | Sitio completo de 11 páginas con 6 artículos y 25 referencias |
 
 **El artículo de lanzamiento es la entrega.** Todo lo demás existe para
 sostenerlo: el blog le da contexto, la ficha de producto lista los seis
@@ -49,8 +51,9 @@ puntos y `marca.html` documenta el razonamiento estratégico.
   de por qué el pilar que no vende es el que da credibilidad a los otros tres.
 - **Métricas.** Cuatro indicadores, con el argumento de por qué en
   distribución exclusiva la venta total es una métrica engañosa.
-- **Comunicación ambiental y greenwashing.** Datos de la Comisión Europea y
-  jurisprudencia europea reciente, en `articulos/greenwashing-marketing-verde.html`.
+- **Comunicación ambiental y greenwashing.** Datos de la Comisión Europea, en
+  `articulos/greenwashing-marketing-verde.html`. La primera trampa de la lista
+  es la de la propia categoría de Aura.
 
 ### Criterio de redacción
 
@@ -58,11 +61,13 @@ Ninguna afirmación del sitio va sin fuente enlazada. Donde la evidencia es
 débil o contradice el argumento comercial de la marca, el texto lo dice. Dos
 ejemplos deliberados:
 
-- El artículo sobre química cita que los productos etiquetados como
-  «orgánicos» o «naturales» no presentaban necesariamente menos compuestos
-  volátiles — un dato que perjudica a la propia categoría de Aura.
-- El artículo sobre plástico admite que la cifra del 90 % que usa toda la
-  industria ecológica **no puede verificarse de forma independiente**.
+- El artículo de ciclo de vida cita que **una toalla reutilizable importada
+  por vía aérea puede tener mayor impacto que una desechable** (Life Cycle
+  Initiative del PNUMA). Es el dato más peligroso posible para una marca de
+  toallas reutilizables, y está en dos artículos.
+- El mismo artículo cita que los productos desechables **orgánicos** tienen
+  impactos mayores que los no orgánicos, lo que desarma la equivalencia entre
+  «natural» y «mejor» de la que vive media categoría.
 
 Si el trabajo se defiende oralmente, ese es el argumento fuerte: la
 credibilidad de las cifras favorables depende de haber publicado también las
@@ -81,20 +86,20 @@ aura/
 ├── 404.html
 ├── articulos/
 │   ├── lanzamiento-aura-san-pedro-sula.html   <- LA ENTREGA
+│   ├── reutilizable-o-desechable.html
+│   ├── cuanto-dura-cuanto-ahorra.html
+│   ├── como-lavar-toallas-de-tela.html
 │   ├── greenwashing-marketing-verde.html
-│   ├── plastico-en-toallas-sanitarias.html
-│   ├── quimicos-en-productos-menstruales.html
-│   ├── biodegradable-o-compostable.html
 │   └── pobreza-menstrual-america-latina.html
 ├── assets/
 │   ├── css/aura.css                Sistema visual completo
 │   ├── js/aura.js                  Sin dependencias
-│   └── img/                        SVG: empaques, figuras, favicon
+│   └── img/                        Fotos de producto, logotipo, figura
 ├── .nojekyll · robots.txt · sitemap.xml
 └── build_*.py                      Generadores de páginas (opcionales)
 ```
 
-Peso total: unos 370 KB. Sin frameworks, sin `node_modules`, sin compilación.
+Peso total: unos 500 KB, la mayor parte en las dos fotos de producto. Sin frameworks, sin `node_modules`, sin compilación.
 
 ---
 
@@ -108,8 +113,8 @@ que digas en la defensa.
 |---|---|---|
 | Fecha de lanzamiento | 1 de septiembre | Ajustala a tu calendario |
 | Puntos de venta | 6, todos en San Pedro Sula | Se nombran por zona y tipo de comercio, no por razón social, para no atribuir nada a negocios reales |
-| Precios | L 65 / L 72 / L 58 | Coherentes con un posicionamiento superior |
-| Porcentajes de composición | Suman 100 % | Si los cambiás, verificá que sigan sumando 100 |
+| Precios | L 145 / L 185 / L 225 por unidad | Coherentes con un producto que dura años, no con un paquete de desechables |
+| Materiales por capa | Algodón, bambú, capa impermeable | Sustituilos por los de tu ficha real de confección |
 | Correo | `hola@aura.hn` | Dominio ficticio |
 
 **Los datos científicos y regulatorios sí son reales** y están enlazados a su
@@ -120,18 +125,23 @@ la Comisión Europea y los datos de ONU Mujeres y UNESCO.
 
 ## Advertencia sobre afirmaciones ambientales
 
-El sitio está redactado para **no** afirmar que el producto está certificado.
-Dice que está en proceso de certificación, y esa redacción es deliberada: es
-parte del argumento del trabajo.
+El sitio está redactado para no prometer lo que no se puede sostener, y esa
+redacción es deliberada: es parte del argumento del trabajo. Tres ejemplos
+que conviene **no** cambiar:
 
-No la cambies. Las guías de publicidad ambiental consideran engañoso llamar
-«biodegradable» o «compostable certificado» a un producto sin evidencia de
-ensayo específica, y todo el sitio está construido sobre esa distinción.
-Un profesor que revise el detalle va a buscar precisamente eso.
+1. **Vida útil.** Se publica 4.3 años como media observada en la literatura,
+   no como garantía de la marca. El rango de hasta diez años se presenta
+   como lo que es: un techo con buen cuidado.
+2. **Producción local.** El argumento no es identidad, es la condición que
+   la Life Cycle Initiative del PNUMA señala como determinante. Si algún día
+   el producto se importa, ese argumento deja de ser válido.
+3. **Para quién no sirve.** El sitio dice explícitamente que sin agua limpia,
+   jabón y un lugar donde secar, el producto no funciona. Es lo que separa
+   informar de vender.
 
-Lo mismo con las afirmaciones de salud: los artículos citan estudios sobre
-*presencia* de compuestos, no sobre daño demostrado, y la diferencia está
-señalada de forma explícita.
+Lo mismo con las afirmaciones de salud: se cita la irritación reportada en
+estudios concretos, señalando que vienen de contextos distintos al hondureño
+y que sus autores califican la calidad general como baja.
 
 ---
 
@@ -159,13 +169,14 @@ Las páginas interiores se generan desde una plantilla común para que el menú
 y el pie no se desincronicen entre las once páginas.
 
 ```bash
-python3 build_pages.py        # los 4 artículos base
-python3 build_art5.py         # artículo de greenwashing
-python3 build_lanzamiento.py  # artículo de lanzamiento
+python3 build_articles.py     # los seis artículos
 python3 build_inner.py        # blog, producto y marca
-python3 gen_packs.py          # SVG de empaques
+python3 gen_logo.py           # marca gráfica y favicon
 python3 gen_fig_dist.py       # figura de distribución
 ```
+
+`build_shell.py` contiene el encabezado, el pie y la plantilla de artículo
+que comparten todas las páginas.
 
 `index.html` y `404.html` se editan a mano. El sitio funciona sin los scripts;
 solo tené presente que un cambio en el menú hay que replicarlo en cada página.
@@ -181,5 +192,8 @@ solo tené presente que un cambio en el menú hay que replicarlo en cada página
   animaciones de entrada.
 - Respeta `prefers-reduced-motion`.
 - Navegación por teclado y foco visible en todos los controles.
-- Los empaques son ilustraciones SVG, no fotos. Si conseguís producto real,
-  reemplazá los `<img src="assets/img/pack-*.svg">` manteniendo proporción 4:5.
+- Las fotos de producto están en `assets/img/producto-mesa.jpg` y
+  `producto-bano.jpg`. La del hero se recorta a 5:4 con `object-fit: cover`;
+  si la sustituís, cuidá que el producto quede en el centro del cuadro.
+- El logotipo se genera con `gen_logo.py` en tres variantes: marca sobre
+  claro, sobre oscuro y favicon.

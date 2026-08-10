@@ -12,7 +12,7 @@
 <meta property="og:locale" content="es_HN">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>document.documentElement.className+=" js";</script>
 <link rel="stylesheet" href="assets/css/aura.css">
 </head>
@@ -23,11 +23,8 @@
 <header class="masthead">
   <div class="wrap masthead__inner">
     <a class="brand" href="index.html" aria-label="Aura, inicio">
-      <svg viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 22 m-11 0 a11 11 0 1 1 22 0" fill="none" stroke="#E5A83B" stroke-width="2.4" stroke-linecap="round"/>
-        <circle cx="16" cy="22" r="3.6" fill="#8C1D33"/>
-      </svg>
-      <span style="font-family:var(--display);font-size:1.4rem;letter-spacing:.02em">aura</span>
+      <img class="brand__mark" src="assets/img/logo-marca.svg" alt="" width="38" height="24">
+      <span class="brand__word">Aura</span>
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span></button>
@@ -51,19 +48,19 @@
     </div>
   </section>
 
-  <section class="band band--light">
+  <section class="band band--paper-2">
     <div class="wrap" style="max-width:820px">
       <p class="eyebrow">Posicionamiento</p>
       <h2 class="display-l" style="margin-bottom:var(--s5)">Un enunciado, cuatro consecuencias.</h2>
       <div class="pull" style="margin-top:0">
-        Para mujeres de San Pedro Sula que ya cuestionan lo que consumen, Aura es la toalla sanitaria que publica su composición completa, porque en una categoría donde la mitad de las etiquetas verdes no verifica nada, el dato contrastable es la única diferencia que la competencia no puede copiar sin pagar el mismo costo.
+        Para mujeres de San Pedro Sula que ya cuestionan lo que consumen, Aura es la toalla reutilizable que se cose en la misma ciudad donde se vende, porque la evidencia de ciclo de vida muestra que una toalla de tela importada por avión puede contaminar más que la desechable que dice reemplazar.
       </div>
       <p style="margin-top:var(--s6)">El enunciado obliga a cuatro cosas, y cada una tiene una consecuencia operativa visible en el sitio:</p>
       <ol style="font-family:var(--read);font-size:1.0625rem;line-height:1.7;padding-left:1.3em">
-        <li style="margin-bottom:var(--s3)">Publicar la tabla de composición con porcentajes, aunque nadie lo exija.</li>
-        <li style="margin-bottom:var(--s3)">No usar sellos ni la palabra «certificado» hasta tener el código de trazabilidad.</li>
+        <li style="margin-bottom:var(--s3)">Fabricar localmente, aunque el costo por unidad sea mayor que importar.</li>
+        <li style="margin-bottom:var(--s3)">Publicar la vida útil observada en la literatura, no la más favorable.</li>
         <li style="margin-bottom:var(--s3)">Citar los estudios que nos contradicen dentro de nuestros propios artículos.</li>
-        <li>Elegir un canal donde el dato se pueda explicar, aunque cueste cobertura.</li>
+        <li>Elegir un canal donde el producto se pueda explicar, aunque cueste cobertura.</li>
       </ol>
     </div>
   </section>
@@ -75,36 +72,36 @@
         <h2 class="display-l">A quién le habla<br>este blog.</h2>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--s5)">
-        <div style="border:1px solid var(--void-3);border-radius:var(--radius-lg);padding:var(--s6);background:var(--void-2)">
-          <span class="data" style="color:var(--halo)">SEGMENTO PRIMARIO</span>
-          <h3 style="font-family:var(--display);font-size:1.5rem;margin:var(--s3) 0 var(--s4)">La que ya lee etiquetas</h3>
-          <p style="font-size:.9375rem;color:var(--paper-soft)">Mujer de 24 a 38 años, residente en San Pedro Sula, con ingreso propio. Ya cambió otros productos de su rutina por versiones sin fragancia o sin ciertos ingredientes. Desconfía de la palabra «natural» porque la vio usada en demasiadas cosas.</p>
-          <p style="font-size:.9375rem;color:var(--paper-soft);margin:0"><strong style="color:var(--pulp)">Qué la mueve:</strong> poder verificar. No busca que le prometan, busca poder comprobar.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--s5)">
+        <div style="border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--s6);background:var(--paper-2)">
+          <span class="data" style="color:var(--wood)">SEGMENTO PRIMARIO</span>
+          <h3 class="display-m" style="margin:var(--s3) 0 var(--s4)">La que ya lee etiquetas</h3>
+          <p style="font-size:.9375rem;color:var(--ink-soft)">Mujer de 24 a 38 años, residente en San Pedro Sula, con ingreso propio. Ya cambió otros productos de su rutina por versiones sin fragancia. Desconfía de la palabra «natural» porque la vio usada en demasiadas cosas.</p>
+          <p style="font-size:.9375rem;color:var(--ink-soft);margin:0"><strong style="color:var(--forest)">Qué la mueve:</strong> poder verificar. No busca que le prometan, busca poder comprobar.</p>
         </div>
 
-        <div style="border:1px solid var(--void-3);border-radius:var(--radius-lg);padding:var(--s6);background:var(--void-2)">
-          <span class="data" style="color:var(--halo)">SEGMENTO SECUNDARIO</span>
-          <h3 style="font-family:var(--display);font-size:1.5rem;margin:var(--s3) 0 var(--s4)">La que tuvo irritación</h3>
-          <p style="font-size:.9375rem;color:var(--paper-soft)">Mujer de cualquier edad con antecedente de molestia recurrente con toallas convencionales. Llega buscando una alternativa concreta, no un discurso ambiental.</p>
-          <p style="font-size:.9375rem;color:var(--paper-soft);margin:0"><strong style="color:var(--pulp)">Qué la mueve:</strong> una lista clara de lo que el producto no lleva. Es el segmento con el que hay que ser más cuidadoso al hablar de salud.</p>
+        <div style="border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--s6);background:var(--paper-2)">
+          <span class="data" style="color:var(--wood)">SEGMENTO SECUNDARIO</span>
+          <h3 class="display-m" style="margin:var(--s3) 0 var(--s4)">La que tuvo irritación</h3>
+          <p style="font-size:.9375rem;color:var(--ink-soft)">Mujer de cualquier edad con antecedente de molestia recurrente con toallas desechables. Llega buscando una alternativa concreta, no un discurso ambiental.</p>
+          <p style="font-size:.9375rem;color:var(--ink-soft);margin:0"><strong style="color:var(--forest)">Qué la mueve:</strong> el alivio. Es el segmento con el que hay que ser más cuidadoso, porque es donde más tentador resulta prometer salud.</p>
         </div>
 
-        <div style="border:1px solid var(--void-3);border-radius:var(--radius-lg);padding:var(--s6);background:var(--void-2)">
-          <span class="data" style="color:var(--halo)">INFLUENCIA</span>
-          <h3 style="font-family:var(--display);font-size:1.5rem;margin:var(--s3) 0 var(--s4)">El punto de venta</h3>
-          <p style="font-size:.9375rem;color:var(--paper-soft)">En las farmacias de barrio y tiendas naturistas de San Pedro Sula, la recomendación de mostrador pesa más que cualquier empaque. En distribución exclusiva ese actor deja de ser un intermediario y pasa a ser parte del mensaje.</p>
-          <p style="font-size:.9375rem;color:var(--paper-soft);margin:0"><strong style="color:var(--pulp)">Qué lo mueve:</strong> margen superior, protección territorial y saber explicar el producto sin equivocarse.</p>
+        <div style="border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--s6);background:var(--paper-2)">
+          <span class="data" style="color:var(--wood)">INFLUENCIA</span>
+          <h3 class="display-m" style="margin:var(--s3) 0 var(--s4)">El punto de venta</h3>
+          <p style="font-size:.9375rem;color:var(--ink-soft)">En las farmacias de barrio y tiendas naturistas de San Pedro Sula, la recomendación de mostrador pesa más que cualquier empaque. Con un producto que exige explicación, ese actor deja de ser intermediario y pasa a ser parte del mensaje.</p>
+          <p style="font-size:.9375rem;color:var(--ink-soft);margin:0"><strong style="color:var(--forest)">Qué lo mueve:</strong> margen superior, protección territorial y saber explicar el producto sin equivocarse.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band band--light-2">
+  <section class="band band--linen">
     <div class="wrap" style="max-width:900px">
       <p class="eyebrow">Estrategia de canal</p>
       <h2 class="display-l" style="margin-bottom:var(--s5)">Por qué exclusiva<br>y no intensiva.</h2>
-      <p class="lede" style="margin-bottom:var(--s7)">La categoría de higiene femenina opera casi sin excepción en distribución intensiva. Aura opera en el extremo opuesto durante su fase de lanzamiento: seis puntos, una sola ciudad. La decisión sacrifica cobertura y compra control.</p>
+      <p class="lede" style="margin-bottom:var(--s7)">La categoría de higiene femenina opera casi sin excepción en distribución intensiva. Aura opera en el extremo opuesto durante su fase de lanzamiento: seis puntos, una sola ciudad. La decisión sacrifica cobertura y compra control. La justificación es específica del producto: una toalla reutilizable exige una conversación, no un empaque.</p>
 
       <figure class="figure" style="margin-top:0">
         <img src="assets/img/fig-distribucion.svg" alt="Diagrama comparativo de distribución intensiva, selectiva y exclusiva" width="780" height="330" loading="lazy">
@@ -114,17 +111,17 @@
       <div class="spec-label" style="max-width:none;margin-top:var(--s7)">
         <div class="spec-label__head">
           <h3 class="spec-label__title">Mezcla de mercadeo</h3>
-          <p class="spec-label__sub">FASE DE LANZAMIENTO · HONDURAS · 2026</p>
+          <p class="spec-label__sub">FASE DE LANZAMIENTO · SAN PEDRO SULA · 2026</p>
         </div>
         <table class="spec-table">
           <tbody>
             <tr>
               <th scope="row">Producto</th>
-              <td>Toalla de fibra vegetal en tres formatos. El atributo diferencial no es el desempeño, es la trazabilidad de materiales.</td>
+              <td>Toalla de tela reutilizable en tres tamaños, con bolsa de transporte. El atributo diferencial no es el material sino la producción local, que es la condición que la evidencia de ciclo de vida señala como determinante.</td>
             </tr>
             <tr>
               <th scope="row">Precio</th>
-              <td>Superior a la categoría, sostenido por costo real de insumo. Precio único publicado, sin descuentos por punto.</td>
+              <td>Inversión inicial superior a un paquete de desechables, con recuperación a mediano plazo. Precio único publicado, sin descuentos por punto.</td>
             </tr>
             <tr>
               <th scope="row">Plaza</th>
@@ -132,7 +129,7 @@
             </tr>
             <tr>
               <th scope="row">Promoción</th>
-              <td>Mercadeo de contenidos. El blog es el canal principal: seis artículos con 49 referencias verificables, en lugar de pauta de alcance.</td>
+              <td>Mercadeo de contenidos. El blog es el canal principal: seis artículos con referencias verificables, en lugar de pauta de alcance.</td>
             </tr>
           </tbody>
         </table>
@@ -145,31 +142,31 @@
       <div style="max-width:620px;margin-bottom:var(--s7)">
         <p class="eyebrow">Pilares de contenido</p>
         <h2 class="display-l">Sobre qué escribe<br>una marca de toallas.</h2>
-        <p class="lede" style="margin-top:var(--s4)">El blog no habla del producto. Habla de las cuatro cosas que hacen que el producto tenga sentido, y deja que el lector haga la conexión.</p>
+        <p class="lede" style="margin-top:var(--s4)">El blog no habla del producto. Habla de las cuatro cosas que hacen que el producto tenga sentido, y deja que quien lee haga la conexión.</p>
       </div>
 
       <div class="stat-row">
         <div class="stat">
           <span class="stat__n">01</span>
-          <span class="stat__l"><strong style="color:var(--pulp)">Materiales y residuos.</strong> Qué hay dentro de una toalla y qué pasa después. Es el pilar que sostiene el argumento del producto.</span>
+          <span class="stat__l"><strong style="color:var(--forest)">Evidencia de ciclo de vida.</strong> Qué se midió al comparar reutilizables con desechables, y bajo qué condiciones se invierte el resultado.</span>
         </div>
         <div class="stat">
           <span class="stat__n">02</span>
-          <span class="stat__l"><strong style="color:var(--pulp)">Salud y evidencia.</strong> Qué dicen los estudios y, sobre todo, qué no dicen. Es el pilar donde más fácil sería exagerar.</span>
+          <span class="stat__l"><strong style="color:var(--forest)">Uso y cuidado.</strong> El pilar más útil y el menos glamoroso. Es el que decide si el producto se usa o se abandona.</span>
         </div>
         <div class="stat">
           <span class="stat__n">03</span>
-          <span class="stat__l"><strong style="color:var(--pulp)">Normativa y sellos.</strong> Cómo leer una afirmación ambiental. Le da al lector herramientas para auditarnos a nosotros también.</span>
+          <span class="stat__l"><strong style="color:var(--forest)">Comunicación ambiental.</strong> Cómo leer una afirmación verde. Le da a quien lee herramientas para auditarnos a nosotros también.</span>
         </div>
         <div class="stat">
           <span class="stat__n">04</span>
-          <span class="stat__l"><strong style="color:var(--pulp)">Contexto social.</strong> Pobreza menstrual y acceso. Es el pilar que no vende, y por eso es el que da credibilidad a los otros tres.</span>
+          <span class="stat__l"><strong style="color:var(--forest)">Contexto social.</strong> Pobreza menstrual y acceso. Es el pilar que no vende, y por eso es el que da credibilidad a los otros tres.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band band--light">
+  <section class="band band--paper-2">
     <div class="wrap" style="max-width:860px">
       <p class="eyebrow">Tono de voz</p>
       <h2 class="display-l" style="margin-bottom:var(--s6)">Cómo se escribe Aura.</h2>
@@ -185,23 +182,23 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row" style="font-weight:400">«Composición completa publicada: 7 componentes, % en peso»</th>
-              <td>«100 % natural»</td>
+              <th scope="row" style="font-weight:400">«Vida media observada: 4.3 años»</th>
+              <td>«Duran para siempre»</td>
             </tr>
             <tr>
-              <th scope="row" style="font-weight:400">«En proceso de certificación EN 13432»</th>
-              <td>«Certificado ecológico»</td>
+              <th scope="row" style="font-weight:400">«Se cose en San Pedro Sula»</th>
+              <td>«Comprometidas con el planeta»</td>
             </tr>
             <tr>
-              <th scope="row" style="font-weight:400">«Los estudios detectaron ftalatos; el daño no está establecido»</th>
-              <td>«Libre de tóxicos»</td>
+              <th scope="row" style="font-weight:400">«Necesita agua limpia y un lugar donde secar»</th>
+              <td>«Para todas las mujeres»</td>
             </tr>
             <tr>
-              <th scope="row" style="font-weight:400">«Seis puntos de venta en San Pedro Sula»</th>
+              <th scope="row" style="font-weight:400">«Seis puntos de venta»</th>
               <td>«Disponible en puntos seleccionados»</td>
             </tr>
             <tr>
-              <th scope="row" style="font-weight:400">«Cuesta más porque la fibra cuesta más»</th>
+              <th scope="row" style="font-weight:400">«Cuesta más al inicio y se recupera con los años»</th>
               <td>«Invertí en vos misma»</td>
             </tr>
           </tbody>
@@ -212,69 +209,70 @@
     </div>
   </section>
 
-  <section class="band band--light-2">
+  <section class="band band--linen">
     <div class="wrap" style="max-width:860px">
       <p class="eyebrow">Identidad visual</p>
-      <h2 class="display-l" style="margin-bottom:var(--s6)">Granate, no rosa.</h2>
-      <p class="lede" style="margin-bottom:var(--s7)">La categoría entera usa rosa pastel y líquido azul en su publicidad. Aura usa el color de aquello que la toalla efectivamente absorbe. Es una decisión de diferenciación, no de provocación: en un lineal donde todo es claro y rosado, un empaque granate sobre mora se ve a distancia.</p>
+      <h2 class="display-l" style="margin-bottom:var(--s6)">El sol y el lienzo.</h2>
+      <p class="lede" style="margin-bottom:var(--s7)">La paleta sale del producto, no de un tablero de tendencias: el verde del logotipo, el crudo del lienzo de la bolsa, el salvia y el rosado de las telas, el dorado del sol naciente. Nada de rosa pastel ni de líquido azul, que es donde vive la publicidad del resto de la categoría.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--s4);margin-bottom:var(--s7)">
-        <div><div style="height:78px;background:#1B0E13;border-radius:var(--radius);border:1px solid rgba(34,26,28,.2)"></div><p class="data" style="margin:var(--s3) 0 0">#1B0E13 · Mora</p></div>
-        <div><div style="height:78px;background:#8C1D33;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#8C1D33 · Granate</p></div>
-        <div><div style="height:78px;background:#E5A83B;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#E5A83B · Halo</p></div>
-        <div><div style="height:78px;background:#4A5A46;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#4A5A46 · Musgo</p></div>
-        <div><div style="height:78px;background:#E6E8DD;border-radius:var(--radius);border:1px solid rgba(34,26,28,.2)"></div><p class="data" style="margin:var(--s3) 0 0">#E6E8DD · Pulpa</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:var(--s4);margin-bottom:var(--s7)">
+        <div><div style="height:80px;background:#2C4636;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#2C4636 · Bosque</p></div>
+        <div><div style="height:80px;background:#A3B79B;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#A3B79B · Salvia</p></div>
+        <div><div style="height:80px;background:#C4913C;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#C4913C · Sol</p></div>
+        <div><div style="height:80px;background:#E8C6B5;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#E8C6B5 · Rosado</p></div>
+        <div><div style="height:80px;background:#8A6C4A;border-radius:var(--radius)"></div><p class="data" style="margin:var(--s3) 0 0">#8A6C4A · Madera</p></div>
+        <div><div style="height:80px;background:#F5F1E8;border-radius:var(--radius);border:1px solid var(--line-2)"></div><p class="data" style="margin:var(--s3) 0 0">#F5F1E8 · Lienzo</p></div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--s5)">
-        <div style="border-top:2px solid var(--ink);padding-top:var(--s4)">
-          <p style="font-family:var(--display);font-size:2rem;line-height:1;margin-bottom:var(--s3)">Young Serif</p>
-          <p class="data" style="margin:0;color:var(--ink-soft)">Titulares. Serif de contraste vivo, sin la elegancia fría de las serif editoriales habituales.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--s5)">
+        <div style="border-top:2px solid var(--forest);padding-top:var(--s4)">
+          <p style="font-family:var(--display);font-weight:600;font-size:2rem;line-height:1;margin-bottom:var(--s3);color:var(--forest)">Petrona</p>
+          <p class="data" style="margin:0;color:var(--ink-soft)">Titulares. Serif de trazo cálido, cercano al del logotipo.</p>
         </div>
-        <div style="border-top:2px solid var(--ink);padding-top:var(--s4)">
-          <p style="font-family:var(--read);font-size:2rem;line-height:1;margin-bottom:var(--s3)">Newsreader</p>
+        <div style="border-top:2px solid var(--forest);padding-top:var(--s4)">
+          <p style="font-family:var(--read);font-size:2rem;line-height:1;margin-bottom:var(--s3);color:var(--forest)">Newsreader</p>
           <p class="data" style="margin:0;color:var(--ink-soft)">Cuerpo de artículo. Pensada para lectura larga en pantalla.</p>
         </div>
-        <div style="border-top:2px solid var(--ink);padding-top:var(--s4)">
-          <p style="font-family:var(--mono);font-size:1.75rem;line-height:1;margin-bottom:var(--s3)">DM Mono</p>
-          <p class="data" style="margin:0;color:var(--ink-soft)">Datos, porcentajes y referencias. La monoespaciada señala «esto es un dato, no una promesa».</p>
+        <div style="border-top:2px solid var(--forest);padding-top:var(--s4)">
+          <p style="font-family:var(--mono);font-size:1.625rem;line-height:1;margin-bottom:var(--s3);color:var(--forest)">DM Mono</p>
+          <p class="data" style="margin:0;color:var(--ink-soft)">Datos y referencias. La monoespaciada señala «esto es un dato, no una promesa».</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band">
+  <section class="band band--forest">
     <div class="wrap" style="max-width:860px">
       <p class="eyebrow">Medición</p>
       <h2 class="display-l" style="margin-bottom:var(--s5)">Qué mira esta estrategia<br>para saber si funciona.</h2>
-      <p class="lede" style="margin-bottom:var(--s6)">En mercadeo de contenidos el alcance es una métrica engañosa: mide cuánta gente pasó, no cuánta entendió. Estos son los indicadores que sí responden a la pregunta.</p>
+      <p class="lede" style="margin-bottom:var(--s6)">En mercadeo de contenidos el alcance es una métrica engañosa: mide cuánta gente pasó, no cuánta entendió. Y en un producto reutilizable, la venta tampoco basta: lo que importa es que se siga usando.</p>
 
-      <div class="faq" style="border-top-color:var(--void-3)">
-        <details open style="border-bottom-color:var(--void-3)">
-          <summary style="color:var(--pulp)">Profundidad de lectura, no visitas</summary>
-          <p style="color:var(--paper-soft)">Porcentaje de lectores que llega al 75 % de un artículo. Un texto de nueve minutos con seis referencias que nadie termina no está haciendo su trabajo, aunque tenga tráfico.</p>
+      <div class="faq">
+        <details open>
+          <summary>Recompra de reposición, no venta inicial</summary>
+          <p>Un producto que dura años no se mide por ventas repetidas rápidas. Se mide por quién vuelve a los seis meses a ampliar su juego. Esa es la señal de que el producto se está usando y no quedó en un cajón.</p>
         </details>
-        <details style="border-bottom-color:var(--void-3)">
-          <summary style="color:var(--pulp)">Recorrido de blog a producto</summary>
-          <p style="color:var(--paper-soft)">Proporción de lectores del artículo de lanzamiento que abre la lista de puntos de venta. Mide si el contenido está convirtiendo interés en intención.</p>
+        <details>
+          <summary>Profundidad de lectura, no visitas</summary>
+          <p>Porcentaje de lectores que llega al 75 % del artículo de lavado. Es el texto que determina si el producto dura tres años o siete, así que su lectura completa vale más que diez visitas a la portada.</p>
         </details>
-        <details style="border-bottom-color:var(--void-3)">
-          <summary style="color:var(--pulp)">Venta por punto, no venta total</summary>
-          <p style="color:var(--paper-soft)">En distribución exclusiva la venta total dice poco, porque los puntos son pocos por diseño. Lo que importa es la rotación media por punto y su dispersión: si un punto vende cinco veces más que otro, el problema es de capacitación, no de demanda.</p>
+        <details>
+          <summary>Venta por punto, no venta total</summary>
+          <p>En distribución exclusiva la venta total dice poco, porque los puntos son pocos por diseño. Importa la rotación media por punto y su dispersión: si un punto vende cinco veces más que otro, el problema es de capacitación, no de demanda.</p>
         </details>
-        <details style="border-bottom-color:var(--void-3)">
-          <summary style="color:var(--pulp)">Precisión del punto de venta</summary>
-          <p style="color:var(--paper-soft)">Visitas de comprador incógnito para verificar que el personal explica la composición sin inventar beneficios de salud ni afirmar certificaciones inexistentes. Es el indicador que protege todo lo demás.</p>
+        <details>
+          <summary>Precisión del punto de venta</summary>
+          <p>Visitas de comprador incógnito para verificar que el personal explica cuántas toallas hacen falta y cómo se lavan, sin inventar beneficios de salud. Es el indicador que protege todo lo demás.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <section class="band band--garnet band--tight">
+  <section class="band band--paper-2 band--tight">
     <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s6);align-items:center;justify-content:space-between">
       <div style="max-width:42ch">
         <h2 class="display-m" style="margin-bottom:var(--s3)">La estrategia empieza en el artículo de lanzamiento.</h2>
-        <p style="margin:0;opacity:.85;font-family:var(--read)">Ahí está desarrollada la decisión de canal, con los criterios de selección de los seis puntos y las razones para elegir San Pedro Sula como plaza de entrada.</p>
+        <p class="lede" style="margin:0">Ahí está desarrollada la decisión de canal, con los criterios de selección de los seis puntos y las razones para elegir San Pedro Sula.</p>
       </div>
       <a class="btn btn--solid" href="articulos/lanzamiento-aura-san-pedro-sula.html">Leer el lanzamiento</a>
     </div>
@@ -287,23 +285,20 @@
     <div class="foot__grid">
       <div>
         <a class="brand" href="index.html" style="margin-bottom:var(--s4)">
-          <svg viewBox="0 0 32 32" aria-hidden="true" style="height:26px">
-            <path d="M16 22 m-11 0 a11 11 0 1 1 22 0" fill="none" stroke="#E5A83B" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="16" cy="22" r="3.6" fill="#8C1D33"/>
-          </svg>
-          <span style="font-family:var(--display);font-size:1.4rem">aura</span>
+          <img class="brand__mark" src="assets/img/logo-marca-claro.svg" alt="" width="38" height="24">
+          <span class="brand__word">Aura</span>
         </a>
-        <p class="foot__blurb">Toallas sanitarias de fibra vegetal con la composición publicada. San Pedro Sula, Honduras.</p>
+        <p class="foot__blurb">Toallas sanitarias ecológicas reutilizables, cosidas en San Pedro Sula. Con la composición y la vida útil publicadas.</p>
       </div>
 
       <div>
         <h4>Blog</h4>
         <ul>
           <li><a href="articulos/lanzamiento-aura-san-pedro-sula.html">Lanzamiento</a></li>
+          <li><a href="articulos/reutilizable-o-desechable.html">Reutilizable o desechable</a></li>
+          <li><a href="articulos/cuanto-dura-cuanto-ahorra.html">Vida útil y ahorro</a></li>
+          <li><a href="articulos/como-lavar-toallas-de-tela.html">Cómo lavarlas</a></li>
           <li><a href="articulos/greenwashing-marketing-verde.html">Greenwashing</a></li>
-          <li><a href="articulos/plastico-en-toallas-sanitarias.html">Plástico en toallas</a></li>
-          <li><a href="articulos/quimicos-en-productos-menstruales.html">Química y piel</a></li>
-          <li><a href="articulos/biodegradable-o-compostable.html">Normas de compostaje</a></li>
           <li><a href="articulos/pobreza-menstrual-america-latina.html">Pobreza menstrual</a></li>
         </ul>
       </div>
@@ -313,6 +308,7 @@
         <ul>
           <li><a href="producto.html">El producto</a></li>
           <li><a href="index.html#composicion">Composición</a></li>
+          <li><a href="producto.html#puntos">Dónde encontrarlas</a></li>
           <li><a href="marca.html">Estrategia de marca</a></li>
           <li><a href="blog.html#metodo">Método editorial</a></li>
         </ul>
