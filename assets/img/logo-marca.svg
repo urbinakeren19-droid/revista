@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 44" role="img" aria-label="Aura">
+  <path d="M18 38 a18 18 0 0 1 36 0" fill="none" stroke="#C4913C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="13.35" y1="34.01" x2="3.50" y2="32.27" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="16.08" y1="26.50" x2="7.42" y2="21.50" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="21.22" y1="20.38" x2="14.79" y2="12.72" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="28.13" y1="16.39" x2="24.71" y2="6.99" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="36.00" y1="15.00" x2="36.00" y2="5.00" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="43.87" y1="16.39" x2="47.29" y2="6.99" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="50.78" y1="20.38" x2="57.21" y2="12.72" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="55.92" y1="26.50" x2="64.58" y2="21.50" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="58.65" y1="34.01" x2="68.50" y2="32.27" stroke="#C4913C" stroke-width="2.8" stroke-linecap="round"/>
+</svg>
